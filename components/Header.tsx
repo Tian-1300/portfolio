@@ -17,11 +17,11 @@ export default function Header() {
   const [open, setOpen] = useState(false);
 
   return (
-    <header className="fixed top-0 z-50 w-full border-b border-black/5 bg-white/80 backdrop-blur-md dark:border-white/10 dark:bg-black/60">
+    <header className="fixed top-0 z-50 w-full border-b border-black/5 bg-background/80 backdrop-blur-md dark:border-white/10">
       <div className="mx-auto flex max-w-5xl items-center justify-between px-6 py-4">
         <a
           href="#top"
-          className="text-sm font-semibold tracking-tight text-neutral-900 dark:text-neutral-100"
+          className="font-serif text-base tracking-tight text-stone-900 dark:text-stone-100"
         >
           {site.name}
         </a>
@@ -31,7 +31,7 @@ export default function Header() {
             <a
               key={link.href}
               href={link.href}
-              className="text-sm text-neutral-600 transition-colors hover:text-neutral-900 dark:text-neutral-400 dark:hover:text-neutral-100"
+              className="text-sm text-stone-600 transition-colors hover:text-accent dark:text-stone-400 dark:hover:text-accent"
             >
               {link.label}
             </a>
@@ -42,7 +42,7 @@ export default function Header() {
           type="button"
           aria-label="Toggle menu"
           onClick={() => setOpen((v) => !v)}
-          className="text-neutral-700 md:hidden dark:text-neutral-300"
+          className="text-stone-700 md:hidden dark:text-stone-300"
         >
           {open ? <X size={22} /> : <Menu size={22} />}
         </button>
@@ -55,7 +55,7 @@ export default function Header() {
               key={link.href}
               href={link.href}
               onClick={() => setOpen(false)}
-              className="rounded-md px-2 py-2 text-sm text-neutral-700 hover:bg-black/5 dark:text-neutral-300 dark:hover:bg-white/10"
+              className="rounded-md px-2 py-2 text-sm text-stone-700 hover:bg-black/5 dark:text-stone-300 dark:hover:bg-white/10"
             >
               {link.label}
             </a>

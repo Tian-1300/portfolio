@@ -1,24 +1,23 @@
+import SectionHeading from "@/components/SectionHeading";
 import { experience } from "@/data/experience";
 
 export default function Experience() {
   return (
     <section id="experience" className="px-6 py-24">
       <div className="mx-auto max-w-5xl">
-        <h2 className="text-sm font-semibold tracking-widest text-neutral-500 uppercase dark:text-neutral-400">
-          Experience
-        </h2>
+        <SectionHeading>Experience</SectionHeading>
 
-        <ol className="mt-8 space-y-8 border-l border-neutral-200 pl-6 dark:border-neutral-800">
+        <ol className="mt-10 space-y-9 border-l border-stone-200 pl-7 dark:border-stone-800">
           {experience.map((item) => (
             <li key={`${item.period}-${item.role}`} className="relative">
-              <span className="absolute top-1.5 -left-[29px] h-2.5 w-2.5 rounded-full bg-neutral-400 dark:bg-neutral-600" />
-              <p className="text-xs font-medium tracking-wide text-neutral-500 uppercase dark:text-neutral-400">
+              <span className="absolute top-1.5 -left-[33px] h-3 w-3 rounded-full border-2 border-background bg-accent" />
+              <p className="text-xs font-medium tracking-wide text-accent uppercase">
                 {item.period}
               </p>
-              <h3 className="mt-1 text-lg font-semibold text-neutral-900 dark:text-neutral-50">
+              <h3 className="mt-1.5 font-serif text-xl text-stone-900 dark:text-stone-50">
                 {item.role}
               </h3>
-              <p className="text-sm text-neutral-600 dark:text-neutral-400">
+              <p className="text-sm text-stone-600 dark:text-stone-400">
                 {item.org}
               </p>
             </li>
