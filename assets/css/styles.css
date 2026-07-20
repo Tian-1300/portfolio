@@ -42,16 +42,9 @@ body {
   background-color: rgb(var(--background));
   background-image:
     radial-gradient(44rem 36rem at 6% -4%, var(--glow-1), transparent 60%),
-    radial-gradient(38rem 32rem at 100% 30%, var(--glow-2), transparent 60%),
-    repeating-linear-gradient(
-      to bottom,
-      transparent 0,
-      transparent 71px,
-      rgb(var(--rule)) 71px,
-      rgb(var(--rule)) 72px
-    );
+    radial-gradient(38rem 32rem at 100% 30%, var(--glow-2), transparent 60%);
   background-attachment: fixed;
-  background-repeat: no-repeat, no-repeat, repeat-y;
+  background-repeat: no-repeat, no-repeat;
   color: rgb(var(--foreground));
   font-family: "Inter", Arial, Helvetica, sans-serif;
   text-rendering: optimizeLegibility;
