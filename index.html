@@ -87,6 +87,7 @@
     <main>
       <!-- Hero -->
       <section id="hero-section" class="hero-section flex min-h-screen flex-col justify-center px-6 pt-28 pb-16">
+        <span id="hero" class="sr-only" aria-hidden="true"></span>
         <div class="mx-auto grid w-full max-w-5xl gap-14 lg:grid-cols-[1.15fr_0.85fr] lg:items-center lg:gap-10">
           <div>
             <p class="mb-5 text-sm font-medium tracking-wide text-accent">Hi, I&rsquo;m Tian</p>
@@ -150,6 +151,7 @@
 
       <!-- About -->
       <section id="about-section" class="about-section border-t border-stone-200 px-6 py-24 dark:border-stone-800">
+        <span id="about" class="sr-only" aria-hidden="true"></span>
         <div class="mx-auto max-w-5xl">
           <h2 class="reveal flex items-center gap-3 text-sm font-semibold tracking-widest text-stone-500 uppercase dark:text-stone-400">
             <span class="h-px w-8 bg-accent"></span>
@@ -288,6 +290,7 @@
 
       <!-- Projects & Publications -->
       <section id="projects-section" class="projects-section border-t border-stone-200 px-6 py-24 dark:border-stone-800">
+        <span id="projects" class="sr-only" aria-hidden="true"></span>
         <div class="mx-auto max-w-5xl">
           <h2 class="flex items-center gap-3 text-sm font-semibold tracking-widest text-stone-500 uppercase dark:text-stone-400">
             <span class="h-px w-8 bg-accent"></span>
@@ -496,6 +499,7 @@
 
       <!-- Contact -->
       <section id="contact-section" class="contact-section border-t border-stone-200 px-6 py-24 dark:border-stone-800">
+        <span id="contact" class="sr-only" aria-hidden="true"></span>
         <div class="reveal relative mx-auto max-w-5xl overflow-hidden rounded-3xl bg-stone-900 px-8 py-14 dark:bg-stone-50 sm:px-16">
           <div class="pointer-events-none absolute inset-0 -z-10">
             <div class="absolute -top-24 -left-16 h-64 w-64 rounded-full bg-accent/30 blur-3xl"></div>
@@ -522,6 +526,9 @@
           <form
             id="contact-form"
             data-contact-email="tt.tian1300@gmail.com"
+            action="mailto:tt.tian1300@gmail.com"
+            method="post"
+            enctype="text/plain"
             novalidate
             class="mx-auto mt-10 grid max-w-xl gap-4 text-left"
           >
@@ -532,6 +539,8 @@
                   id="name"
                   name="name"
                   type="text"
+                  required
+                  minlength="2"
                   aria-invalid="false"
                   placeholder="Your name"
                   class="mt-1.5 w-full rounded-lg border border-stone-700 bg-stone-800/60 px-3.5 py-2.5 text-sm text-stone-100 placeholder-stone-500 outline-none focus:border-accent dark:border-stone-300 dark:bg-white dark:text-stone-900 dark:placeholder-stone-400"
@@ -544,6 +553,7 @@
                   id="email"
                   name="email"
                   type="email"
+                  required
                   aria-invalid="false"
                   placeholder="you@example.com"
                   class="mt-1.5 w-full rounded-lg border border-stone-700 bg-stone-800/60 px-3.5 py-2.5 text-sm text-stone-100 placeholder-stone-500 outline-none focus:border-accent dark:border-stone-300 dark:bg-white dark:text-stone-900 dark:placeholder-stone-400"
@@ -558,6 +568,8 @@
                 id="message"
                 name="message"
                 rows="4"
+                required
+                minlength="10"
                 aria-invalid="false"
                 placeholder="What would you like to talk about?"
                 class="mt-1.5 w-full resize-none rounded-lg border border-stone-700 bg-stone-800/60 px-3.5 py-2.5 text-sm text-stone-100 placeholder-stone-500 outline-none focus:border-accent dark:border-stone-300 dark:bg-white dark:text-stone-900 dark:placeholder-stone-400"
