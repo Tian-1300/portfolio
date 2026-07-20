@@ -90,7 +90,7 @@ if (window.lucide) {
     const { input, error, message } = field;
     if (!input) return;
     input.classList.toggle("border-red-500", hasError);
-    input.classList.toggle("border-stone-700", !hasError);
+    input.classList.toggle("border-background/20", !hasError);
     input.setAttribute("aria-invalid", String(hasError));
     if (error) {
       error.textContent = hasError ? message : "";

@@ -12,7 +12,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Newsreader:ital,wght@0,400;0,500;0,600;1,400;1,500&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Newsreader:ital,wght@0,400;0,500;0,600;1,400;1,500;1,600&display=swap"
       rel="stylesheet"
     />
 
@@ -23,14 +23,15 @@
         theme: {
           extend: {
             colors: {
-              background: "var(--background)",
-              foreground: "var(--foreground)",
-              accent: "var(--accent)",
-              "accent-soft": "var(--accent-soft)",
-              "accent-2": "var(--accent-2)",
-              "accent-2-soft": "var(--accent-2-soft)",
-              "accent-3": "var(--accent-3)",
-              "accent-3-soft": "var(--accent-3-soft)",
+              background: "rgb(var(--background) / <alpha-value>)",
+              foreground: "rgb(var(--foreground) / <alpha-value>)",
+              "ink-soft": "rgb(var(--ink-soft) / <alpha-value>)",
+              rule: "rgb(var(--rule) / <alpha-value>)",
+              "paper-alt": "rgb(var(--paper-alt) / <alpha-value>)",
+              accent: "rgb(var(--accent) / <alpha-value>)",
+              "accent-soft": "rgb(var(--accent-soft) / <alpha-value>)",
+              "accent-2": "rgb(var(--accent-2) / <alpha-value>)",
+              "accent-2-soft": "rgb(var(--accent-2-soft) / <alpha-value>)",
             },
             fontFamily: {
               sans: ["Inter", "ui-sans-serif", "system-ui", "sans-serif"],
@@ -44,22 +45,19 @@
   </head>
   <body class="min-h-full flex flex-col font-sans antialiased text-foreground">
     <!-- Header -->
-    <header class="fixed top-0 z-50 w-full border-b border-black/5 bg-background/80 backdrop-blur-md dark:border-white/10">
+    <header class="fixed top-0 z-50 w-full border-b border-rule bg-background/85 backdrop-blur-md">
       <div class="mx-auto flex max-w-5xl items-center justify-between px-6 py-4">
-        <a
-          href="#hero-section"
-          class="font-serif text-base font-medium tracking-tight text-stone-900 dark:text-stone-100"
-        >
+        <a href="#hero-section" class="font-serif text-lg font-medium italic tracking-tight text-foreground">
           Tian Tian
         </a>
 
         <nav class="hidden gap-8 md:flex">
-          <a href="#about-section" class="text-sm text-stone-600 transition-colors hover:text-accent dark:text-stone-400 dark:hover:text-accent">About</a>
-          <a href="#experience" class="text-sm text-stone-600 transition-colors hover:text-accent dark:text-stone-400 dark:hover:text-accent">Experience</a>
-          <a href="#education" class="text-sm text-stone-600 transition-colors hover:text-accent dark:text-stone-400 dark:hover:text-accent">Education</a>
-          <a href="#projects-section" class="text-sm text-stone-600 transition-colors hover:text-accent dark:text-stone-400 dark:hover:text-accent">Projects</a>
-          <a href="#skills" class="text-sm text-stone-600 transition-colors hover:text-accent dark:text-stone-400 dark:hover:text-accent">Skills</a>
-          <a href="#contact-section" class="text-sm text-stone-600 transition-colors hover:text-accent dark:text-stone-400 dark:hover:text-accent">Contact</a>
+          <a href="#about-section" class="text-sm text-ink-soft transition-colors hover:text-accent">About</a>
+          <a href="#experience" class="text-sm text-ink-soft transition-colors hover:text-accent">Experience</a>
+          <a href="#education" class="text-sm text-ink-soft transition-colors hover:text-accent">Education</a>
+          <a href="#projects-section" class="text-sm text-ink-soft transition-colors hover:text-accent">Projects</a>
+          <a href="#skills" class="text-sm text-ink-soft transition-colors hover:text-accent">Skills</a>
+          <a href="#contact-section" class="text-sm text-ink-soft transition-colors hover:text-accent">Contact</a>
         </nav>
 
         <button
@@ -67,20 +65,20 @@
           id="nav-toggle"
           aria-label="Toggle menu"
           aria-expanded="false"
-          class="text-stone-700 md:hidden dark:text-stone-300"
+          class="text-foreground md:hidden"
         >
           <i id="icon-menu" data-lucide="menu" class="h-6 w-6"></i>
           <i id="icon-close" data-lucide="x" class="hidden h-6 w-6"></i>
         </button>
       </div>
 
-      <nav id="mobile-menu" class="hidden flex-col gap-1 border-t border-black/5 px-6 py-4 md:hidden dark:border-white/10">
-        <a href="#about-section" class="rounded-md px-2 py-2 text-sm text-stone-700 hover:bg-black/5 dark:text-stone-300 dark:hover:bg-white/10">About</a>
-        <a href="#experience" class="rounded-md px-2 py-2 text-sm text-stone-700 hover:bg-black/5 dark:text-stone-300 dark:hover:bg-white/10">Experience</a>
-        <a href="#education" class="rounded-md px-2 py-2 text-sm text-stone-700 hover:bg-black/5 dark:text-stone-300 dark:hover:bg-white/10">Education</a>
-        <a href="#projects-section" class="rounded-md px-2 py-2 text-sm text-stone-700 hover:bg-black/5 dark:text-stone-300 dark:hover:bg-white/10">Projects</a>
-        <a href="#skills" class="rounded-md px-2 py-2 text-sm text-stone-700 hover:bg-black/5 dark:text-stone-300 dark:hover:bg-white/10">Skills</a>
-        <a href="#contact-section" class="rounded-md px-2 py-2 text-sm text-stone-700 hover:bg-black/5 dark:text-stone-300 dark:hover:bg-white/10">Contact</a>
+      <nav id="mobile-menu" class="hidden flex-col gap-1 border-t border-rule px-6 py-4 md:hidden">
+        <a href="#about-section" class="rounded-md px-2 py-2 text-sm text-foreground hover:bg-paper-alt">About</a>
+        <a href="#experience" class="rounded-md px-2 py-2 text-sm text-foreground hover:bg-paper-alt">Experience</a>
+        <a href="#education" class="rounded-md px-2 py-2 text-sm text-foreground hover:bg-paper-alt">Education</a>
+        <a href="#projects-section" class="rounded-md px-2 py-2 text-sm text-foreground hover:bg-paper-alt">Projects</a>
+        <a href="#skills" class="rounded-md px-2 py-2 text-sm text-foreground hover:bg-paper-alt">Skills</a>
+        <a href="#contact-section" class="rounded-md px-2 py-2 text-sm text-foreground hover:bg-paper-alt">Contact</a>
       </nav>
     </header>
 
@@ -88,98 +86,96 @@
       <!-- Hero -->
       <section id="hero-section" class="hero-section flex min-h-screen flex-col justify-center px-6 pt-28 pb-16">
         <span id="hero" class="sr-only" aria-hidden="true"></span>
-        <div class="mx-auto grid w-full max-w-5xl gap-14 lg:grid-cols-[1.15fr_0.85fr] lg:items-center lg:gap-10">
+        <div class="mx-auto grid w-full max-w-5xl gap-16 lg:grid-cols-[1.15fr_0.85fr] lg:items-center lg:gap-12">
           <div>
-            <p class="mb-5 text-sm font-medium tracking-wide text-accent">Hi, I&rsquo;m Tian</p>
-            <h1 class="font-serif text-6xl leading-[1.05] font-medium text-stone-900 sm:text-7xl dark:text-stone-50">
+            <p class="eyebrow-label">Portfolio &middot; Kuala Lumpur, Malaysia</p>
+            <h1 class="mt-4 font-serif text-6xl leading-[1.02] font-medium text-foreground sm:text-7xl">
               Tian Tian
             </h1>
-            <p class="mt-5 inline-block rounded-full border border-accent/30 bg-accent-soft px-4 py-1.5 text-sm font-medium text-accent">
-              PhD Candidate &middot; Applied Mathematics (Operations Research)
+            <p class="mt-4 font-serif text-2xl italic text-accent">
+              PhD Candidate, Applied Mathematics &mdash; Operations Research
             </p>
-            <p class="mt-6 max-w-xl text-lg leading-relaxed text-stone-600 dark:text-stone-400">
+            <p class="mt-6 max-w-xl text-lg leading-relaxed text-ink-soft">
               AI-driven optimization, predictive analytics, and data-driven decision-making for revenue management.
             </p>
-            <p class="mt-4 max-w-md border-l-2 border-accent/40 pl-4 font-serif text-lg text-stone-500 italic dark:text-stone-400">
-              &ldquo;A passionate lady who embraces life and never stops learning.&rdquo;
+            <p class="relative mt-6 max-w-md pl-8 font-serif text-lg text-foreground/80 italic">
+              <span class="absolute top-0 left-0 font-serif text-4xl leading-none text-accent/40">&ldquo;</span>
+              A passionate lady who embraces life and never stops learning.
             </p>
 
             <div class="mt-10 flex flex-wrap items-center gap-4">
               <a
                 href="#projects-section"
-                class="group inline-flex items-center gap-2 rounded-full bg-accent px-5 py-3 text-sm font-medium text-white shadow-lg shadow-accent/20 transition-transform hover:-translate-y-0.5"
+                class="group inline-flex items-center gap-2 rounded-full bg-foreground px-5 py-3 text-sm font-medium text-background transition-transform hover:-translate-y-0.5"
               >
                 View my research
                 <i data-lucide="arrow-right" class="h-4 w-4 transition-transform group-hover:translate-x-0.5"></i>
               </a>
               <a
                 href="#contact-section"
-                class="inline-flex items-center gap-2 rounded-full border border-stone-300 px-5 py-3 text-sm font-medium text-stone-800 transition-colors hover:bg-stone-100 dark:border-stone-700 dark:text-stone-200 dark:hover:bg-stone-900"
+                class="inline-flex items-center gap-2 rounded-full border border-rule px-5 py-3 text-sm font-medium text-foreground transition-colors hover:bg-paper-alt"
               >
                 Get in touch
               </a>
             </div>
 
             <div class="mt-12 flex items-center gap-5">
-              <a href="https://github.com/Tian-1300" target="_blank" rel="noreferrer" aria-label="GitHub" class="text-stone-500 transition-colors hover:text-accent">
+              <a href="https://github.com/Tian-1300" target="_blank" rel="noreferrer noopener" aria-label="GitHub" class="text-ink-soft transition-colors hover:text-accent">
                 <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true" width="20" height="20"><path d="M12 .5C5.65.5.5 5.65.5 12c0 5.09 3.29 9.4 7.86 10.93.57.1.78-.25.78-.55v-2.15c-3.2.7-3.87-1.36-3.87-1.36-.53-1.34-1.29-1.7-1.29-1.7-1.05-.72.08-.7.08-.7 1.17.08 1.78 1.2 1.78 1.2 1.03 1.77 2.72 1.26 3.38.96.1-.75.4-1.26.72-1.55-2.55-.29-5.24-1.28-5.24-5.7 0-1.26.45-2.29 1.19-3.09-.12-.29-.52-1.47.11-3.06 0 0 .97-.31 3.18 1.18a11 11 0 0 1 5.79 0c2.21-1.5 3.18-1.18 3.18-1.18.63 1.6.23 2.77.11 3.06.74.8 1.19 1.83 1.19 3.09 0 4.43-2.7 5.4-5.27 5.69.42.36.77 1.06.77 2.15v3.19c0 .3.21.66.79.55A11.5 11.5 0 0 0 23.5 12C23.5 5.65 18.35.5 12 .5Z"/></svg>
               </a>
-              <a href="https://www.linkedin.com/in/tian-tian-b23680375" target="_blank" rel="noreferrer" aria-label="LinkedIn" class="text-stone-500 transition-colors hover:text-accent">
+              <a href="https://www.linkedin.com/in/tian-tian-b23680375" target="_blank" rel="noreferrer noopener" aria-label="LinkedIn" class="text-ink-soft transition-colors hover:text-accent">
                 <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true" width="20" height="20"><path d="M20.45 20.45h-3.56v-5.57c0-1.33-.02-3.04-1.85-3.04-1.85 0-2.14 1.45-2.14 2.94v5.67H9.34V9h3.42v1.56h.05c.48-.9 1.63-1.85 3.36-1.85 3.6 0 4.27 2.37 4.27 5.45v6.29ZM5.34 7.43a2.06 2.06 0 1 1 0-4.13 2.06 2.06 0 0 1 0 4.13ZM3.55 20.45h3.57V9H3.55v11.45ZM22.22 0H1.77C.8 0 0 .78 0 1.75v20.5C0 23.22.8 24 1.77 24h20.45c.98 0 1.78-.78 1.78-1.75V1.75C24 .78 23.2 0 22.22 0Z"/></svg>
               </a>
-              <a href="https://orcid.org/0000-0003-1323-4773" target="_blank" rel="noreferrer" aria-label="ORCID" class="text-stone-500 transition-colors hover:text-accent">
+              <a href="https://orcid.org/0000-0003-1323-4773" target="_blank" rel="noreferrer noopener" aria-label="ORCID" class="text-ink-soft transition-colors hover:text-accent">
                 <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true" width="20" height="20"><path d="M12 0C5.37 0 0 5.37 0 12s5.37 12 12 12 12-5.37 12-12S18.63 0 12 0ZM7.37 5.06a1.32 1.32 0 1 1 0 2.65 1.32 1.32 0 0 1 0-2.65Zm-1.1 3.98h2.19v10.02H6.27V9.04Zm4.16 0h3.86c3.68 0 5.3 2.63 5.3 5.02 0 2.6-2.03 5-5.29 5h-3.87V9.04Zm2.19 1.87v6.28h1.49c2.19 0 3.39-1.57 3.39-3.15 0-1.71-1.05-3.13-3.4-3.13h-1.48Z"/></svg>
               </a>
-              <a href="mailto:tt.tian1300@gmail.com" aria-label="Email" class="text-stone-500 transition-colors hover:text-accent">
+              <a href="mailto:tt.tian1300@gmail.com" aria-label="Email" class="text-ink-soft transition-colors hover:text-accent">
                 <i data-lucide="mail" class="h-5 w-5"></i>
               </a>
             </div>
           </div>
 
           <div class="relative mx-auto w-full max-w-sm lg:mx-0">
-            <div class="absolute -top-8 -right-8 -bottom-8 -left-8 -z-10 rounded-[2.5rem] bg-gradient-to-br from-accent-soft via-accent-3-soft to-accent-2-soft blur-2xl"></div>
-            <div class="relative aspect-[4/5] overflow-hidden rounded-[2rem] border border-stone-200 shadow-2xl shadow-stone-900/10 dark:border-stone-800">
-              <img
-                src="assets/images/avatar.png"
-                alt="Tian Tian"
-                class="h-full w-full object-cover"
-              />
+            <div class="absolute -top-3 -left-3 h-full w-full rounded-2xl border-2 border-rule"></div>
+            <div class="relative aspect-[4/5] overflow-hidden rounded-2xl border border-foreground/10 shadow-xl shadow-foreground/10">
+              <img src="assets/images/avatar.png" alt="Tian Tian" class="h-full w-full object-cover" />
+            </div>
+            <div class="absolute -bottom-4 -right-4 rotate-[-4deg] rounded-full bg-accent px-4 py-2 text-xs font-medium text-white shadow-lg shadow-accent/30">
+              PhD Candidate
             </div>
           </div>
         </div>
       </section>
 
       <!-- About -->
-      <section id="about-section" class="about-section border-t border-stone-200 px-6 py-24 dark:border-stone-800">
+      <section id="about-section" class="about-section border-t border-rule px-6 py-24">
         <span id="about" class="sr-only" aria-hidden="true"></span>
         <div class="mx-auto max-w-5xl">
-          <h2 class="reveal flex items-center gap-3 text-sm font-semibold tracking-widest text-stone-500 uppercase dark:text-stone-400">
-            <span class="h-px w-8 bg-accent"></span>
-            About
-          </h2>
+          <p class="reveal eyebrow"><span class="eyebrow-label">01</span> &mdash; About</p>
 
           <div class="reveal mt-8 grid gap-10 lg:grid-cols-[1fr_auto]" style="transition-delay: 100ms">
-            <p class="max-w-2xl text-lg leading-relaxed text-stone-700 dark:text-stone-300">
-              Passionate and self-driven final-year PhD candidate in Applied Mathematics (Operations Research) at
-              Universiti Putra Malaysia, specializing in artificial intelligence, predictive analytics, intelligent
-              decision-making, and multi-objective optimization for revenue management. My research integrates
-              machine learning, occupancy forecasting, dynamic pricing, and optimization algorithms to develop
-              data-driven decision-support systems for real-world operational environments. I am expected to
-              complete all academic requirements by August 2026 and officially graduate in October 2026.
+            <p class="max-w-2xl text-lg leading-relaxed text-foreground/90">
+              <span class="font-serif text-3xl italic text-accent">P</span>assionate and self-driven final-year PhD
+              candidate in Applied Mathematics (Operations Research) at Universiti Putra Malaysia, specializing in
+              artificial intelligence, predictive analytics, intelligent decision-making, and multi-objective
+              optimization for revenue management. My research integrates machine learning, occupancy forecasting,
+              dynamic pricing, and optimization algorithms to develop data-driven decision-support systems for
+              real-world operational environments. I am expected to complete all academic requirements by August
+              2026 and officially graduate in October 2026.
             </p>
 
-            <div class="flex h-fit flex-col gap-4 rounded-2xl border border-stone-200 bg-stone-50 p-6 lg:w-64 dark:border-stone-800 dark:bg-stone-900/40">
+            <div class="flex h-fit flex-col gap-4 rounded-2xl border border-rule p-6 lg:w-64">
               <div class="flex items-start gap-3">
                 <i data-lucide="map-pin" class="mt-0.5 h-[18px] w-[18px] flex-shrink-0 text-accent"></i>
-                <p class="text-sm text-stone-600 dark:text-stone-400">
+                <p class="text-sm text-ink-soft">
                   Institute for Mathematical Research (INSPEM), Universiti Putra Malaysia
                 </p>
               </div>
               <a
                 href="/Tian-Tian-CV.pdf"
                 target="_blank"
-                rel="noreferrer"
-                class="inline-flex items-center justify-center gap-2 rounded-full bg-stone-900 px-5 py-2.5 text-sm font-medium text-white transition-transform hover:-translate-y-0.5 dark:bg-white dark:text-stone-900"
+                rel="noreferrer noopener"
+                class="inline-flex items-center justify-center gap-2 rounded-full bg-foreground px-5 py-2.5 text-sm font-medium text-background transition-transform hover:-translate-y-0.5"
               >
                 <i data-lucide="file-down" class="h-4 w-4"></i>
                 Download CV
@@ -192,95 +188,83 @@
       <!-- Experience -->
       <section id="experience" class="px-6 py-24">
         <div class="mx-auto max-w-5xl">
-          <h2 class="reveal flex items-center gap-3 text-sm font-semibold tracking-widest text-stone-500 uppercase dark:text-stone-400">
-            <span class="h-px w-8 bg-accent-3"></span>
-            Experience
-          </h2>
+          <p class="reveal eyebrow"><span class="eyebrow-label">02</span> &mdash; Experience</p>
 
-          <ol class="mt-10 space-y-9 border-l border-stone-200 pl-7 dark:border-stone-800">
-            <li class="relative">
-              <span class="absolute top-1.5 -left-[33px] h-3 w-3 rounded-full border-2 border-background bg-accent-3"></span>
-              <div class="reveal">
-                <p class="text-xs font-medium tracking-wide text-accent-3 uppercase">2025 — 2026.03</p>
-                <h3 class="mt-1.5 font-serif text-xl font-medium text-stone-900 dark:text-stone-50">Intern</h3>
-                <p class="text-sm text-stone-600 dark:text-stone-400">UnionPay International</p>
+          <div class="mt-10 border-t border-rule">
+            <div class="reveal group grid grid-cols-[7rem_1fr] gap-6 border-b border-rule py-6 transition-colors hover:bg-paper-alt sm:grid-cols-[9rem_1fr]">
+              <p class="text-xs font-medium tracking-wide text-ink-soft uppercase">2025 — 2026.03</p>
+              <div>
+                <h3 class="font-serif text-xl font-medium text-foreground">Intern</h3>
+                <p class="text-sm text-ink-soft">UnionPay International</p>
               </div>
-            </li>
-            <li class="relative">
-              <span class="absolute top-1.5 -left-[33px] h-3 w-3 rounded-full border-2 border-background bg-accent-3"></span>
-              <div class="reveal" style="transition-delay: 80ms">
-                <p class="text-xs font-medium tracking-wide text-accent-3 uppercase">2024 — 2025</p>
-                <h3 class="mt-1.5 font-serif text-xl font-medium text-stone-900 dark:text-stone-50">Designated Assistant</h3>
-                <p class="text-sm text-stone-600 dark:text-stone-400">Embassy of the People&rsquo;s Republic of China in Malaysia</p>
+            </div>
+            <div class="reveal group grid grid-cols-[7rem_1fr] gap-6 border-b border-rule py-6 transition-colors hover:bg-paper-alt sm:grid-cols-[9rem_1fr]" style="transition-delay: 80ms">
+              <p class="text-xs font-medium tracking-wide text-ink-soft uppercase">2024 — 2025</p>
+              <div>
+                <h3 class="font-serif text-xl font-medium text-foreground">Designated Assistant</h3>
+                <p class="text-sm text-ink-soft">Embassy of the People&rsquo;s Republic of China in Malaysia</p>
               </div>
-            </li>
-            <li class="relative">
-              <span class="absolute top-1.5 -left-[33px] h-3 w-3 rounded-full border-2 border-background bg-accent-3"></span>
-              <div class="reveal" style="transition-delay: 160ms">
-                <p class="text-xs font-medium tracking-wide text-accent-3 uppercase">2024 — 2026</p>
-                <h3 class="mt-1.5 font-serif text-xl font-medium text-stone-900 dark:text-stone-50">Founder</h3>
-                <p class="text-sm text-stone-600 dark:text-stone-400">Chinese Students&rsquo; Association, Universiti Putra Malaysia</p>
+            </div>
+            <div class="reveal group grid grid-cols-[7rem_1fr] gap-6 border-b border-rule py-6 transition-colors hover:bg-paper-alt sm:grid-cols-[9rem_1fr]" style="transition-delay: 160ms">
+              <p class="text-xs font-medium tracking-wide text-ink-soft uppercase">2024 — 2026</p>
+              <div>
+                <h3 class="font-serif text-xl font-medium text-foreground">Founder</h3>
+                <p class="text-sm text-ink-soft">Chinese Students&rsquo; Association, Universiti Putra Malaysia</p>
               </div>
-            </li>
-            <li class="relative">
-              <span class="absolute top-1.5 -left-[33px] h-3 w-3 rounded-full border-2 border-background bg-accent-3"></span>
-              <div class="reveal" style="transition-delay: 240ms">
-                <p class="text-xs font-medium tracking-wide text-accent-3 uppercase">2023 — 2025</p>
-                <h3 class="mt-1.5 font-serif text-xl font-medium text-stone-900 dark:text-stone-50">General Secretary</h3>
-                <p class="text-sm text-stone-600 dark:text-stone-400">CSSAM (Chinese Students &amp; Scholars Association Malaysia)</p>
+            </div>
+            <div class="reveal group grid grid-cols-[7rem_1fr] gap-6 border-b border-rule py-6 transition-colors hover:bg-paper-alt sm:grid-cols-[9rem_1fr]" style="transition-delay: 240ms">
+              <p class="text-xs font-medium tracking-wide text-ink-soft uppercase">2023 — 2025</p>
+              <div>
+                <h3 class="font-serif text-xl font-medium text-foreground">General Secretary</h3>
+                <p class="text-sm text-ink-soft">CSSAM (Chinese Students &amp; Scholars Association Malaysia)</p>
               </div>
-            </li>
-            <li class="relative">
-              <span class="absolute top-1.5 -left-[33px] h-3 w-3 rounded-full border-2 border-background bg-accent-3"></span>
-              <div class="reveal" style="transition-delay: 320ms">
-                <p class="text-xs font-medium tracking-wide text-accent-3 uppercase">2022 — 2023</p>
-                <h3 class="mt-1.5 font-serif text-xl font-medium text-stone-900 dark:text-stone-50">Revenue Manager</h3>
-                <p class="text-sm text-stone-600 dark:text-stone-400">Zenith Hotels &amp; Resorts</p>
+            </div>
+            <div class="reveal group grid grid-cols-[7rem_1fr] gap-6 border-b border-rule py-6 transition-colors hover:bg-paper-alt sm:grid-cols-[9rem_1fr]" style="transition-delay: 320ms">
+              <p class="text-xs font-medium tracking-wide text-ink-soft uppercase">2022 — 2023</p>
+              <div>
+                <h3 class="font-serif text-xl font-medium text-foreground">Revenue Manager</h3>
+                <p class="text-sm text-ink-soft">Zenith Hotels &amp; Resorts</p>
               </div>
-            </li>
-            <li class="relative">
-              <span class="absolute top-1.5 -left-[33px] h-3 w-3 rounded-full border-2 border-background bg-accent-3"></span>
-              <div class="reveal" style="transition-delay: 400ms">
-                <p class="text-xs font-medium tracking-wide text-accent-3 uppercase">2013 — 2017</p>
-                <h3 class="mt-1.5 font-serif text-xl font-medium text-stone-900 dark:text-stone-50">Founder</h3>
-                <p class="text-sm text-stone-600 dark:text-stone-400">Pin-Yan-Huang Brand</p>
+            </div>
+            <div class="reveal group grid grid-cols-[7rem_1fr] gap-6 border-b border-rule py-6 transition-colors hover:bg-paper-alt sm:grid-cols-[9rem_1fr]" style="transition-delay: 400ms">
+              <p class="text-xs font-medium tracking-wide text-ink-soft uppercase">2013 — 2017</p>
+              <div>
+                <h3 class="font-serif text-xl font-medium text-foreground">Founder</h3>
+                <p class="text-sm text-ink-soft">Pin-Yan-Huang Brand</p>
               </div>
-            </li>
-          </ol>
+            </div>
+          </div>
         </div>
       </section>
 
       <!-- Education -->
-      <section id="education" class="border-t border-stone-200 px-6 py-24 dark:border-stone-800">
+      <section id="education" class="border-t border-rule px-6 py-24">
         <div class="mx-auto max-w-5xl">
-          <h2 class="reveal flex items-center gap-3 text-sm font-semibold tracking-widest text-stone-500 uppercase dark:text-stone-400">
-            <span class="h-px w-8 bg-accent-2"></span>
-            Education
-          </h2>
+          <p class="reveal eyebrow"><span class="eyebrow-label">03</span> &mdash; Education</p>
 
           <div class="mt-10 grid gap-6 sm:grid-cols-2">
-            <div class="reveal rounded-2xl border border-stone-200 border-t-2 border-t-accent-2/50 bg-stone-50/60 p-6 transition-shadow hover:shadow-md dark:border-stone-800 dark:border-t-accent-2/50 dark:bg-stone-900/30">
+            <div class="reveal rounded-2xl border border-rule border-t-2 border-t-accent-2 bg-paper-alt/50 p-6 transition-shadow hover:shadow-md">
               <p class="text-xs font-medium tracking-wide text-accent-2 uppercase">2023 — Present</p>
-              <h3 class="mt-2 font-serif text-lg font-medium text-stone-900 dark:text-stone-50">
+              <h3 class="mt-2 font-serif text-lg font-medium text-foreground">
                 Doctor of Philosophy, Applied Mathematics (Operations Research)
               </h3>
-              <p class="mt-1 text-sm text-stone-600 dark:text-stone-400">Universiti Putra Malaysia</p>
-              <p class="mt-1 text-sm text-stone-500 dark:text-stone-500">Institute for Mathematical Research (INSPEM)</p>
+              <p class="mt-1 text-sm text-ink-soft">Universiti Putra Malaysia</p>
+              <p class="mt-1 text-sm text-ink-soft/80">Institute for Mathematical Research (INSPEM)</p>
             </div>
-            <div class="reveal rounded-2xl border border-stone-200 border-t-2 border-t-accent-2/50 bg-stone-50/60 p-6 transition-shadow hover:shadow-md dark:border-stone-800 dark:border-t-accent-2/50 dark:bg-stone-900/30" style="transition-delay: 80ms">
+            <div class="reveal rounded-2xl border border-rule border-t-2 border-t-accent-2 bg-paper-alt/50 p-6 transition-shadow hover:shadow-md" style="transition-delay: 80ms">
               <p class="text-xs font-medium tracking-wide text-accent-2 uppercase">2022</p>
-              <h3 class="mt-2 font-serif text-lg font-medium text-stone-900 dark:text-stone-50">Data Analytics Programme</h3>
-              <p class="mt-1 text-sm text-stone-600 dark:text-stone-400">Cambridge Judge Business School</p>
+              <h3 class="mt-2 font-serif text-lg font-medium text-foreground">Data Analytics Programme</h3>
+              <p class="mt-1 text-sm text-ink-soft">Cambridge Judge Business School</p>
             </div>
-            <div class="reveal rounded-2xl border border-stone-200 border-t-2 border-t-accent-2/50 bg-stone-50/60 p-6 transition-shadow hover:shadow-md dark:border-stone-800 dark:border-t-accent-2/50 dark:bg-stone-900/30" style="transition-delay: 160ms">
+            <div class="reveal rounded-2xl border border-rule border-t-2 border-t-accent-2 bg-paper-alt/50 p-6 transition-shadow hover:shadow-md" style="transition-delay: 160ms">
               <p class="text-xs font-medium tracking-wide text-accent-2 uppercase">2020 — 2022</p>
-              <h3 class="mt-2 font-serif text-lg font-medium text-stone-900 dark:text-stone-50">Master of Business Administration</h3>
-              <p class="mt-1 text-sm text-stone-600 dark:text-stone-400">Universiti Putra Malaysia</p>
+              <h3 class="mt-2 font-serif text-lg font-medium text-foreground">Master of Business Administration</h3>
+              <p class="mt-1 text-sm text-ink-soft">Universiti Putra Malaysia</p>
             </div>
-            <div class="reveal rounded-2xl border border-stone-200 border-t-2 border-t-accent-2/50 bg-stone-50/60 p-6 transition-shadow hover:shadow-md dark:border-stone-800 dark:border-t-accent-2/50 dark:bg-stone-900/30" style="transition-delay: 240ms">
+            <div class="reveal rounded-2xl border border-rule border-t-2 border-t-accent-2 bg-paper-alt/50 p-6 transition-shadow hover:shadow-md" style="transition-delay: 240ms">
               <p class="text-xs font-medium tracking-wide text-accent-2 uppercase">2017 — 2020</p>
-              <h3 class="mt-2 font-serif text-lg font-medium text-stone-900 dark:text-stone-50">B.Sc. Information Technology</h3>
-              <p class="mt-1 text-sm text-stone-600 dark:text-stone-400">
+              <h3 class="mt-2 font-serif text-lg font-medium text-foreground">B.Sc. Information Technology</h3>
+              <p class="mt-1 text-sm text-ink-soft">
                 Asia Pacific University of Technology &amp; Innovation (KL) — Dual Award with Staffordshire University (UK)
               </p>
             </div>
@@ -289,235 +273,226 @@
       </section>
 
       <!-- Projects & Publications -->
-      <section id="projects-section" class="projects-section border-t border-stone-200 px-6 py-24 dark:border-stone-800">
+      <section id="projects-section" class="projects-section border-t border-rule px-6 py-24">
         <span id="projects" class="sr-only" aria-hidden="true"></span>
         <div class="mx-auto max-w-5xl">
-          <h2 class="flex items-center gap-3 text-sm font-semibold tracking-widest text-stone-500 uppercase dark:text-stone-400">
-            <span class="h-px w-8 bg-accent"></span>
-            Projects &amp; Publications
-          </h2>
-          <p class="mt-4 max-w-2xl text-stone-600 dark:text-stone-400">
+          <p class="eyebrow"><span class="eyebrow-label">04</span> &mdash; Projects &amp; Publications</p>
+          <p class="mt-4 max-w-2xl text-ink-soft">
             Selected research projects — from applied machine-learning systems to optimization models — each one
             published and peer-reviewed.
           </p>
 
-          <div class="mt-10 flex flex-col gap-4">
+          <div class="mt-10 border-t border-rule">
             <a
               href="https://doi.org/10.1016/j.annale.2026.100227"
               target="_blank"
-              rel="noreferrer"
-              class="reveal group flex flex-col gap-3 rounded-2xl border border-stone-200 p-6 transition-all hover:-translate-y-0.5 hover:border-accent/40 hover:shadow-lg hover:shadow-stone-900/5 dark:border-stone-800 dark:hover:border-accent/40"
+              rel="noreferrer noopener"
+              class="reveal group grid grid-cols-[2.5rem_1fr_auto] items-start gap-4 border-b border-rule py-7 transition-colors hover:bg-paper-alt sm:grid-cols-[3.5rem_1fr_auto]"
             >
-              <div class="flex items-start justify-between gap-4">
-                <h3 class="flex items-start gap-3 font-serif text-lg font-medium text-stone-900 dark:text-stone-50">
-                  <span class="mt-2.5 h-1.5 w-1.5 flex-shrink-0 rounded-full bg-accent"></span>
+              <span class="index-num text-2xl sm:text-3xl">01</span>
+              <div>
+                <h3 class="font-serif text-lg font-medium text-foreground transition-colors group-hover:text-accent">
                   Man vs machine: The efficacy of experience-based pricing strategies in hotel revenue management using active learning with machine learning
                 </h3>
-                <i data-lucide="arrow-up-right" class="mt-1 h-[18px] w-[18px] flex-shrink-0 text-stone-400 transition-colors group-hover:text-accent"></i>
+                <p class="mt-2 text-sm leading-relaxed text-ink-soft">
+                  Designed an active-learning ML framework that pits experience-based human pricing against algorithmic pricing in hotel revenue management, quantifying when each approach wins and how to blend them into a hybrid decision-support workflow.
+                </p>
+                <div class="mt-3 flex flex-wrap items-center gap-2">
+                  <span class="rounded-full border border-rule px-2.5 py-1 text-xs font-medium text-ink-soft">Machine Learning</span>
+                  <span class="rounded-full border border-rule px-2.5 py-1 text-xs font-medium text-ink-soft">Active Learning</span>
+                  <span class="rounded-full border border-rule px-2.5 py-1 text-xs font-medium text-ink-soft">Revenue Management</span>
+                </div>
+                <p class="mt-3 text-xs text-ink-soft/80">Annals of Tourism Research Empirical Insights &middot; Nov 2026</p>
               </div>
-              <p class="pl-[18px] text-sm leading-relaxed text-stone-600 dark:text-stone-400">
-                Designed an active-learning ML framework that pits experience-based human pricing against algorithmic pricing in hotel revenue management, quantifying when each approach wins and how to blend them into a hybrid decision-support workflow.
-              </p>
-              <div class="flex flex-wrap items-center gap-2 pl-[18px]">
-                <span class="rounded-full bg-stone-100 px-2.5 py-1 text-xs font-medium text-stone-600 dark:bg-stone-800 dark:text-stone-300">Machine Learning</span>
-                <span class="rounded-full bg-stone-100 px-2.5 py-1 text-xs font-medium text-stone-600 dark:bg-stone-800 dark:text-stone-300">Active Learning</span>
-                <span class="rounded-full bg-stone-100 px-2.5 py-1 text-xs font-medium text-stone-600 dark:bg-stone-800 dark:text-stone-300">Revenue Management</span>
-              </div>
-              <p class="pl-[18px] text-xs text-stone-500 dark:text-stone-500">Annals of Tourism Research Empirical Insights &middot; Nov 2026</p>
+              <i data-lucide="arrow-up-right" class="mt-1 h-[18px] w-[18px] flex-shrink-0 text-ink-soft transition-colors group-hover:text-accent"></i>
             </a>
 
             <a
               href="https://karyailham.com.my/index.php/arbms/index"
               target="_blank"
-              rel="noreferrer"
-              class="reveal group flex flex-col gap-3 rounded-2xl border border-stone-200 p-6 transition-all hover:-translate-y-0.5 hover:border-accent/40 hover:shadow-lg hover:shadow-stone-900/5 dark:border-stone-800 dark:hover:border-accent/40"
+              rel="noreferrer noopener"
+              class="reveal group grid grid-cols-[2.5rem_1fr_auto] items-start gap-4 border-b border-rule py-7 transition-colors hover:bg-paper-alt sm:grid-cols-[3.5rem_1fr_auto]"
               style="transition-delay: 80ms"
             >
-              <div class="flex items-start justify-between gap-4">
-                <h3 class="flex items-start gap-3 font-serif text-lg font-medium text-stone-900 dark:text-stone-50">
-                  <span class="mt-2.5 h-1.5 w-1.5 flex-shrink-0 rounded-full bg-accent-2"></span>
+              <span class="index-num text-2xl sm:text-3xl">02</span>
+              <div>
+                <h3 class="font-serif text-lg font-medium text-foreground transition-colors group-hover:text-accent">
                   Hotel Room Revenue Management: A Systematic Review Using PRISMA Approach
                 </h3>
-                <i data-lucide="arrow-up-right" class="mt-1 h-[18px] w-[18px] flex-shrink-0 text-stone-400 transition-colors group-hover:text-accent"></i>
+                <p class="mt-2 text-sm leading-relaxed text-ink-soft">
+                  Ran a PRISMA-guided systematic review across decades of hotel revenue management literature, mapping dominant methods and pricing models and surfacing the open research gaps that motivated the rest of this research program.
+                </p>
+                <div class="mt-3 flex flex-wrap items-center gap-2">
+                  <span class="rounded-full border border-rule px-2.5 py-1 text-xs font-medium text-ink-soft">Systematic Review</span>
+                  <span class="rounded-full border border-rule px-2.5 py-1 text-xs font-medium text-ink-soft">PRISMA</span>
+                  <span class="rounded-full border border-rule px-2.5 py-1 text-xs font-medium text-ink-soft">Revenue Management</span>
+                </div>
+                <p class="mt-3 text-xs text-ink-soft/80">Journal of Advanced Research in Business and Management Studies &middot; May 2026</p>
               </div>
-              <p class="pl-[18px] text-sm leading-relaxed text-stone-600 dark:text-stone-400">
-                Ran a PRISMA-guided systematic review across decades of hotel revenue management literature, mapping dominant methods and pricing models and surfacing the open research gaps that motivated the rest of this research program.
-              </p>
-              <div class="flex flex-wrap items-center gap-2 pl-[18px]">
-                <span class="rounded-full bg-stone-100 px-2.5 py-1 text-xs font-medium text-stone-600 dark:bg-stone-800 dark:text-stone-300">Systematic Review</span>
-                <span class="rounded-full bg-stone-100 px-2.5 py-1 text-xs font-medium text-stone-600 dark:bg-stone-800 dark:text-stone-300">PRISMA</span>
-                <span class="rounded-full bg-stone-100 px-2.5 py-1 text-xs font-medium text-stone-600 dark:bg-stone-800 dark:text-stone-300">Revenue Management</span>
-              </div>
-              <p class="pl-[18px] text-xs text-stone-500 dark:text-stone-500">Journal of Advanced Research in Business and Management Studies &middot; May 2026</p>
+              <i data-lucide="arrow-up-right" class="mt-1 h-[18px] w-[18px] flex-shrink-0 text-ink-soft transition-colors group-hover:text-accent"></i>
             </a>
 
             <a
               href="https://doi.org/10.1186/s40561-025-00415-z"
               target="_blank"
-              rel="noreferrer"
-              class="reveal group flex flex-col gap-3 rounded-2xl border border-stone-200 p-6 transition-all hover:-translate-y-0.5 hover:border-accent/40 hover:shadow-lg hover:shadow-stone-900/5 dark:border-stone-800 dark:hover:border-accent/40"
+              rel="noreferrer noopener"
+              class="reveal group grid grid-cols-[2.5rem_1fr_auto] items-start gap-4 border-b border-rule py-7 transition-colors hover:bg-paper-alt sm:grid-cols-[3.5rem_1fr_auto]"
               style="transition-delay: 160ms"
             >
-              <div class="flex items-start justify-between gap-4">
-                <h3 class="flex items-start gap-3 font-serif text-lg font-medium text-stone-900 dark:text-stone-50">
-                  <span class="mt-2.5 h-1.5 w-1.5 flex-shrink-0 rounded-full bg-accent-3"></span>
+              <span class="index-num text-2xl sm:text-3xl">03</span>
+              <div>
+                <h3 class="font-serif text-lg font-medium text-foreground transition-colors group-hover:text-accent">
                   AI-driven predictive models for optimizing mathematics education technology: Enhancing decision-making through educational data mining and meta-analysis
                 </h3>
-                <i data-lucide="arrow-up-right" class="mt-1 h-[18px] w-[18px] flex-shrink-0 text-stone-400 transition-colors group-hover:text-accent"></i>
+                <p class="mt-2 text-sm leading-relaxed text-ink-soft">
+                  Built predictive ML models on top of educational data mining and meta-analysis to help mathematics-education platforms make better, evidence-backed decisions about content and interventions.
+                </p>
+                <div class="mt-3 flex flex-wrap items-center gap-2">
+                  <span class="rounded-full border border-rule px-2.5 py-1 text-xs font-medium text-ink-soft">Predictive Modeling</span>
+                  <span class="rounded-full border border-rule px-2.5 py-1 text-xs font-medium text-ink-soft">Educational Data Mining</span>
+                  <span class="rounded-full border border-rule px-2.5 py-1 text-xs font-medium text-ink-soft">Meta-Analysis</span>
+                </div>
+                <p class="mt-3 text-xs text-ink-soft/80">Smart Learning Environments &middot; Oct 2025</p>
               </div>
-              <p class="pl-[18px] text-sm leading-relaxed text-stone-600 dark:text-stone-400">
-                Built predictive ML models on top of educational data mining and meta-analysis to help mathematics-education platforms make better, evidence-backed decisions about content and interventions.
-              </p>
-              <div class="flex flex-wrap items-center gap-2 pl-[18px]">
-                <span class="rounded-full bg-stone-100 px-2.5 py-1 text-xs font-medium text-stone-600 dark:bg-stone-800 dark:text-stone-300">Predictive Modeling</span>
-                <span class="rounded-full bg-stone-100 px-2.5 py-1 text-xs font-medium text-stone-600 dark:bg-stone-800 dark:text-stone-300">Educational Data Mining</span>
-                <span class="rounded-full bg-stone-100 px-2.5 py-1 text-xs font-medium text-stone-600 dark:bg-stone-800 dark:text-stone-300">Meta-Analysis</span>
-              </div>
-              <p class="pl-[18px] text-xs text-stone-500 dark:text-stone-500">Smart Learning Environments &middot; Oct 2025</p>
+              <i data-lucide="arrow-up-right" class="mt-1 h-[18px] w-[18px] flex-shrink-0 text-ink-soft transition-colors group-hover:text-accent"></i>
             </a>
 
             <a
               href="https://doi.org/10.3390/math12152367"
               target="_blank"
-              rel="noreferrer"
-              class="reveal group flex flex-col gap-3 rounded-2xl border border-stone-200 p-6 transition-all hover:-translate-y-0.5 hover:border-accent/40 hover:shadow-lg hover:shadow-stone-900/5 dark:border-stone-800 dark:hover:border-accent/40"
+              rel="noreferrer noopener"
+              class="reveal group grid grid-cols-[2.5rem_1fr_auto] items-start gap-4 border-b border-rule py-7 transition-colors hover:bg-paper-alt sm:grid-cols-[3.5rem_1fr_auto]"
               style="transition-delay: 240ms"
             >
-              <div class="flex items-start justify-between gap-4">
-                <h3 class="flex items-start gap-3 font-serif text-lg font-medium text-stone-900 dark:text-stone-50">
-                  <span class="mt-2.5 h-1.5 w-1.5 flex-shrink-0 rounded-full bg-accent"></span>
+              <span class="index-num text-2xl sm:text-3xl">04</span>
+              <div>
+                <h3 class="font-serif text-lg font-medium text-foreground transition-colors group-hover:text-accent">
                   Bi-Objective Mixed Integer Nonlinear Programming Model for Low Carbon Location-Inventory-Routing Problem with Time Windows and Customer Satisfaction
                 </h3>
-                <i data-lucide="arrow-up-right" class="mt-1 h-[18px] w-[18px] flex-shrink-0 text-stone-400 transition-colors group-hover:text-accent"></i>
+                <p class="mt-2 text-sm leading-relaxed text-ink-soft">
+                  Formulated and solved a bi-objective mixed-integer nonlinear program that jointly optimizes facility location, inventory, and vehicle routing under time-window and customer-satisfaction constraints while minimizing carbon emissions.
+                </p>
+                <div class="mt-3 flex flex-wrap items-center gap-2">
+                  <span class="rounded-full border border-rule px-2.5 py-1 text-xs font-medium text-ink-soft">Mixed-Integer Programming</span>
+                  <span class="rounded-full border border-rule px-2.5 py-1 text-xs font-medium text-ink-soft">Multi-Objective Optimization</span>
+                  <span class="rounded-full border border-rule px-2.5 py-1 text-xs font-medium text-ink-soft">Supply Chain</span>
+                </div>
+                <p class="mt-3 text-xs text-ink-soft/80">Mathematics &middot; Jul 2024</p>
               </div>
-              <p class="pl-[18px] text-sm leading-relaxed text-stone-600 dark:text-stone-400">
-                Formulated and solved a bi-objective mixed-integer nonlinear program that jointly optimizes facility location, inventory, and vehicle routing under time-window and customer-satisfaction constraints while minimizing carbon emissions.
-              </p>
-              <div class="flex flex-wrap items-center gap-2 pl-[18px]">
-                <span class="rounded-full bg-stone-100 px-2.5 py-1 text-xs font-medium text-stone-600 dark:bg-stone-800 dark:text-stone-300">Mixed-Integer Programming</span>
-                <span class="rounded-full bg-stone-100 px-2.5 py-1 text-xs font-medium text-stone-600 dark:bg-stone-800 dark:text-stone-300">Multi-Objective Optimization</span>
-                <span class="rounded-full bg-stone-100 px-2.5 py-1 text-xs font-medium text-stone-600 dark:bg-stone-800 dark:text-stone-300">Supply Chain</span>
-              </div>
-              <p class="pl-[18px] text-xs text-stone-500 dark:text-stone-500">Mathematics &middot; Jul 2024</p>
+              <i data-lucide="arrow-up-right" class="mt-1 h-[18px] w-[18px] flex-shrink-0 text-ink-soft transition-colors group-hover:text-accent"></i>
             </a>
           </div>
         </div>
       </section>
 
       <!-- Skills -->
-      <section id="skills" class="border-t border-stone-200 px-6 py-24 dark:border-stone-800">
+      <section id="skills" class="border-t border-rule px-6 py-24">
         <div class="mx-auto max-w-4xl text-center">
           <div class="reveal flex justify-center">
-            <h2 class="flex items-center gap-3 text-sm font-semibold tracking-widest text-stone-500 uppercase dark:text-stone-400">
-              <span class="h-px w-8 bg-accent-2"></span>
-              Skills
-            </h2>
+            <p class="eyebrow"><span class="eyebrow-label">05</span> &mdash; Skills</p>
           </div>
 
           <div class="reveal mt-12 flex flex-wrap items-center justify-center gap-x-2.5 gap-y-1.5" style="transition-delay: 100ms">
-              <span class="inline-block" style="transform: rotate(-4deg) translateY(-3px)"><span class="inline-block cursor-default rounded-md px-1.5 py-0.5 leading-none transition-transform duration-200 hover:-translate-y-0.5 hover:scale-110 text-[11px] font-normal text-violet-600 hover:bg-violet-100 dark:text-violet-400 dark:hover:bg-violet-950/40">Artificial Intelligence</span></span>
-              <span class="inline-block" style="transform: rotate(-1deg) translateY(0px)"><span class="inline-block cursor-default rounded-md px-1.5 py-0.5 leading-none transition-transform duration-200 hover:-translate-y-0.5 hover:scale-110 text-[11px] font-normal text-rose-600 hover:bg-rose-100 dark:text-rose-400 dark:hover:bg-rose-950/40">Machine Learning</span></span>
-              <span class="inline-block" style="transform: rotate(3deg) translateY(0px)"><span class="inline-block cursor-default rounded-md px-1.5 py-0.5 leading-none transition-transform duration-200 hover:-translate-y-0.5 hover:scale-110 text-xs font-normal text-amber-600 hover:bg-amber-100 dark:text-amber-400 dark:hover:bg-amber-950/40">Deep Learning</span></span>
-              <span class="inline-block" style="transform: rotate(3deg) translateY(-1px)"><span class="inline-block cursor-default rounded-md px-1.5 py-0.5 leading-none transition-transform duration-200 hover:-translate-y-0.5 hover:scale-110 text-[10px] font-normal text-rose-600 hover:bg-rose-100 dark:text-rose-400 dark:hover:bg-rose-950/40">Explainable AI</span></span>
-              <span class="inline-block" style="transform: rotate(3deg) translateY(1px)"><span class="inline-block cursor-default rounded-md px-1.5 py-0.5 leading-none transition-transform duration-200 hover:-translate-y-0.5 hover:scale-110 text-[10px] font-normal text-emerald-600 hover:bg-emerald-100 dark:text-emerald-400 dark:hover:bg-emerald-950/40">SHAP</span></span>
-              <span class="inline-block" style="transform: rotate(-4deg) translateY(2px)"><span class="inline-block cursor-default rounded-md px-1.5 py-0.5 leading-none transition-transform duration-200 hover:-translate-y-0.5 hover:scale-110 text-[11px] font-normal text-rose-600 hover:bg-rose-100 dark:text-rose-400 dark:hover:bg-rose-950/40">Feature Engineering</span></span>
-              <span class="inline-block" style="transform: rotate(4deg) translateY(1px)"><span class="inline-block cursor-default rounded-md px-1.5 py-0.5 leading-none transition-transform duration-200 hover:-translate-y-0.5 hover:scale-110 text-[10px] font-normal text-sky-600 hover:bg-sky-100 dark:text-sky-400 dark:hover:bg-sky-950/40">XGBoost</span></span>
-              <span class="inline-block" style="transform: rotate(4deg) translateY(3px)"><span class="inline-block cursor-default rounded-md px-1.5 py-0.5 leading-none transition-transform duration-200 hover:-translate-y-0.5 hover:scale-110 text-[10px] font-normal text-amber-600 hover:bg-amber-100 dark:text-amber-400 dark:hover:bg-amber-950/40">Random Forest</span></span>
-              <span class="inline-block" style="transform: rotate(-4deg) translateY(-1px)"><span class="inline-block cursor-default rounded-md px-1.5 py-0.5 leading-none transition-transform duration-200 hover:-translate-y-0.5 hover:scale-110 text-[13px] font-medium text-amber-600 hover:bg-amber-100 dark:text-amber-400 dark:hover:bg-amber-950/40">Decision Tree</span></span>
-              <span class="inline-block" style="transform: rotate(0deg) translateY(0px)"><span class="inline-block cursor-default rounded-md px-1.5 py-0.5 leading-none transition-transform duration-200 hover:-translate-y-0.5 hover:scale-110 text-xs font-normal text-sky-600 hover:bg-sky-100 dark:text-sky-400 dark:hover:bg-sky-950/40">Linear Regression</span></span>
-              <span class="inline-block" style="transform: rotate(0deg) translateY(-3px)"><span class="inline-block cursor-default rounded-md px-1.5 py-0.5 leading-none transition-transform duration-200 hover:-translate-y-0.5 hover:scale-110 text-xs font-normal text-emerald-600 hover:bg-emerald-100 dark:text-emerald-400 dark:hover:bg-emerald-950/40">Neural Networks</span></span>
-              <span class="inline-block" style="transform: rotate(-3deg) translateY(1px)"><span class="inline-block cursor-default rounded-md px-1.5 py-0.5 leading-none transition-transform duration-200 hover:-translate-y-0.5 hover:scale-110 text-xs font-normal text-amber-600 hover:bg-amber-100 dark:text-amber-400 dark:hover:bg-amber-950/40">Data Analytics</span></span>
-              <span class="inline-block" style="transform: rotate(-2deg) translateY(-1px)"><span class="inline-block cursor-default rounded-md px-1.5 py-0.5 leading-none transition-transform duration-200 hover:-translate-y-0.5 hover:scale-110 text-[10px] font-normal text-fuchsia-600 hover:bg-fuchsia-100 dark:text-fuchsia-400 dark:hover:bg-fuchsia-950/40">Predictive Analytics</span></span>
-              <span class="inline-block" style="transform: rotate(1deg) translateY(-1px)"><span class="inline-block cursor-default rounded-md px-1.5 py-0.5 leading-none transition-transform duration-200 hover:-translate-y-0.5 hover:scale-110 text-[13px] font-medium text-emerald-600 hover:bg-emerald-100 dark:text-emerald-400 dark:hover:bg-emerald-950/40">Data Mining</span></span>
-              <span class="inline-block" style="transform: rotate(0deg) translateY(3px)"><span class="inline-block cursor-default rounded-md px-1.5 py-0.5 leading-none transition-transform duration-200 hover:-translate-y-0.5 hover:scale-110 text-xs font-medium text-teal-600 hover:bg-teal-100 dark:text-teal-400 dark:hover:bg-teal-950/40">Statistical Analysis</span></span>
-              <span class="inline-block" style="transform: rotate(-4deg) translateY(1px)"><span class="inline-block cursor-default rounded-md px-1.5 py-0.5 leading-none transition-transform duration-200 hover:-translate-y-0.5 hover:scale-110 text-[10px] font-normal text-violet-600 hover:bg-violet-100 dark:text-violet-400 dark:hover:bg-violet-950/40">Quantitative Analysis</span></span>
-              <span class="inline-block" style="transform: rotate(3deg) translateY(-1px)"><span class="inline-block cursor-default rounded-md px-1.5 py-0.5 leading-none transition-transform duration-200 hover:-translate-y-0.5 hover:scale-110 text-xs font-medium text-fuchsia-600 hover:bg-fuchsia-100 dark:text-fuchsia-400 dark:hover:bg-fuchsia-950/40">Operations Research</span></span>
-              <span class="inline-block" style="transform: rotate(-4deg) translateY(3px)"><span class="inline-block cursor-default rounded-md px-1.5 py-0.5 leading-none transition-transform duration-200 hover:-translate-y-0.5 hover:scale-110 text-[10px] font-normal text-rose-600 hover:bg-rose-100 dark:text-rose-400 dark:hover:bg-rose-950/40">Mathematical Modeling</span></span>
-              <span class="inline-block" style="transform: rotate(3deg) translateY(1px)"><span class="inline-block cursor-default rounded-md px-1.5 py-0.5 leading-none transition-transform duration-200 hover:-translate-y-0.5 hover:scale-110 text-[10px] font-normal text-fuchsia-600 hover:bg-fuchsia-100 dark:text-fuchsia-400 dark:hover:bg-fuchsia-950/40">Optimization</span></span>
-              <span class="inline-block" style="transform: rotate(2deg) translateY(-2px)"><span class="inline-block cursor-default rounded-md px-1.5 py-0.5 leading-none transition-transform duration-200 hover:-translate-y-0.5 hover:scale-110 text-[10px] font-normal text-amber-600 hover:bg-amber-100 dark:text-amber-400 dark:hover:bg-amber-950/40">Multi-Objective Optimization</span></span>
-              <span class="inline-block" style="transform: rotate(-1deg) translateY(-1px)"><span class="inline-block cursor-default rounded-md px-1.5 py-0.5 leading-none transition-transform duration-200 hover:-translate-y-0.5 hover:scale-110 text-[13px] font-medium text-emerald-600 hover:bg-emerald-100 dark:text-emerald-400 dark:hover:bg-emerald-950/40">NSGA-II</span></span>
-              <span class="inline-block" style="transform: rotate(1deg) translateY(-1px)"><span class="inline-block cursor-default rounded-md px-1.5 py-0.5 leading-none transition-transform duration-200 hover:-translate-y-0.5 hover:scale-110 text-[11px] font-normal text-violet-600 hover:bg-violet-100 dark:text-violet-400 dark:hover:bg-violet-950/40">NSGA-III</span></span>
-              <span class="inline-block" style="transform: rotate(-1deg) translateY(3px)"><span class="inline-block cursor-default rounded-md px-1.5 py-0.5 leading-none transition-transform duration-200 hover:-translate-y-0.5 hover:scale-110 text-[10px] font-normal text-fuchsia-600 hover:bg-fuchsia-100 dark:text-fuchsia-400 dark:hover:bg-fuchsia-950/40">Particle Swarm Optimization</span></span>
-              <span class="inline-block" style="transform: rotate(-2deg) translateY(2px)"><span class="inline-block cursor-default rounded-md px-1.5 py-0.5 leading-none transition-transform duration-200 hover:-translate-y-0.5 hover:scale-110 text-[10px] font-normal text-orange-600 hover:bg-orange-100 dark:text-orange-400 dark:hover:bg-orange-950/40">Metaheuristics</span></span>
-              <span class="inline-block" style="transform: rotate(-3deg) translateY(2px)"><span class="inline-block cursor-default rounded-md px-1.5 py-0.5 leading-none transition-transform duration-200 hover:-translate-y-0.5 hover:scale-110 text-[11px] font-normal text-rose-600 hover:bg-rose-100 dark:text-rose-400 dark:hover:bg-rose-950/40">Decision Optimization</span></span>
-              <span class="inline-block" style="transform: rotate(-2deg) translateY(3px)"><span class="inline-block cursor-default rounded-md px-1.5 py-0.5 leading-none transition-transform duration-200 hover:-translate-y-0.5 hover:scale-110 text-xs font-medium text-violet-600 hover:bg-violet-100 dark:text-violet-400 dark:hover:bg-violet-950/40">Decision Support</span></span>
-              <span class="inline-block" style="transform: rotate(0deg) translateY(0px)"><span class="inline-block cursor-default rounded-md px-1.5 py-0.5 leading-none transition-transform duration-200 hover:-translate-y-0.5 hover:scale-110 text-[10px] font-normal text-rose-600 hover:bg-rose-100 dark:text-rose-400 dark:hover:bg-rose-950/40">Revenue Management</span></span>
-              <span class="inline-block" style="transform: rotate(0deg) translateY(1px)"><span class="inline-block cursor-default rounded-md px-1.5 py-0.5 leading-none transition-transform duration-200 hover:-translate-y-0.5 hover:scale-110 text-[11px] font-normal text-violet-600 hover:bg-violet-100 dark:text-violet-400 dark:hover:bg-violet-950/40">Hotel Revenue Management</span></span>
-              <span class="inline-block" style="transform: rotate(4deg) translateY(1px)"><span class="inline-block cursor-default rounded-md px-1.5 py-0.5 leading-none transition-transform duration-200 hover:-translate-y-0.5 hover:scale-110 text-xs font-medium text-violet-600 hover:bg-violet-100 dark:text-violet-400 dark:hover:bg-violet-950/40">Dynamic Pricing</span></span>
-              <span class="inline-block" style="transform: rotate(1deg) translateY(1px)"><span class="inline-block cursor-default rounded-md px-1.5 py-0.5 leading-none transition-transform duration-200 hover:-translate-y-0.5 hover:scale-110 text-xs font-medium text-fuchsia-600 hover:bg-fuchsia-100 dark:text-fuchsia-400 dark:hover:bg-fuchsia-950/40">Pricing Strategy</span></span>
-              <span class="inline-block" style="transform: rotate(-3deg) translateY(1px)"><span class="inline-block cursor-default rounded-md px-1.5 py-0.5 leading-none transition-transform duration-200 hover:-translate-y-0.5 hover:scale-110 text-xs font-normal text-sky-600 hover:bg-sky-100 dark:text-sky-400 dark:hover:bg-sky-950/40">Demand Forecasting</span></span>
-              <span class="inline-block" style="transform: rotate(-4deg) translateY(-1px)"><span class="inline-block cursor-default rounded-md px-1.5 py-0.5 leading-none transition-transform duration-200 hover:-translate-y-0.5 hover:scale-110 text-[13px] font-medium text-amber-600 hover:bg-amber-100 dark:text-amber-400 dark:hover:bg-amber-950/40">Resource Allocation</span></span>
-              <span class="inline-block" style="transform: rotate(-3deg) translateY(0px)"><span class="inline-block cursor-default rounded-md px-1.5 py-0.5 leading-none transition-transform duration-200 hover:-translate-y-0.5 hover:scale-110 text-[10px] font-normal text-orange-600 hover:bg-orange-100 dark:text-orange-400 dark:hover:bg-orange-950/40">Profit Maximization</span></span>
-              <span class="inline-block" style="transform: rotate(3deg) translateY(0px)"><span class="inline-block cursor-default rounded-md px-1.5 py-0.5 leading-none transition-transform duration-200 hover:-translate-y-0.5 hover:scale-110 text-[11px] font-normal text-violet-600 hover:bg-violet-100 dark:text-violet-400 dark:hover:bg-violet-950/40">Strategic Management</span></span>
-              <span class="inline-block" style="transform: rotate(4deg) translateY(0px)"><span class="inline-block cursor-default rounded-md px-1.5 py-0.5 leading-none transition-transform duration-200 hover:-translate-y-0.5 hover:scale-110 text-[10px] font-normal text-amber-600 hover:bg-amber-100 dark:text-amber-400 dark:hover:bg-amber-950/40">Strategic Thinking</span></span>
-              <span class="inline-block" style="transform: rotate(-4deg) translateY(0px)"><span class="inline-block cursor-default rounded-md px-1.5 py-0.5 leading-none transition-transform duration-200 hover:-translate-y-0.5 hover:scale-110 text-xs font-medium text-rose-600 hover:bg-rose-100 dark:text-rose-400 dark:hover:bg-rose-950/40">Critical Thinking</span></span>
-              <span class="inline-block" style="transform: rotate(-2deg) translateY(2px)"><span class="inline-block cursor-default rounded-md px-1.5 py-0.5 leading-none transition-transform duration-200 hover:-translate-y-0.5 hover:scale-110 text-xs font-medium text-teal-600 hover:bg-teal-100 dark:text-teal-400 dark:hover:bg-teal-950/40">Problem Solving</span></span>
-              <span class="inline-block" style="transform: rotate(0deg) translateY(-2px)"><span class="inline-block cursor-default rounded-md px-1.5 py-0.5 leading-none transition-transform duration-200 hover:-translate-y-0.5 hover:scale-110 text-[11px] font-normal text-fuchsia-600 hover:bg-fuchsia-100 dark:text-fuchsia-400 dark:hover:bg-fuchsia-950/40">Innovation</span></span>
-              <span class="inline-block" style="transform: rotate(-2deg) translateY(-1px)"><span class="inline-block cursor-default rounded-md px-1.5 py-0.5 leading-none transition-transform duration-200 hover:-translate-y-0.5 hover:scale-110 text-[10px] font-normal text-fuchsia-600 hover:bg-fuchsia-100 dark:text-fuchsia-400 dark:hover:bg-fuchsia-950/40">Leadership</span></span>
-              <span class="inline-block" style="transform: rotate(1deg) translateY(-3px)"><span class="inline-block cursor-default rounded-md px-1.5 py-0.5 leading-none transition-transform duration-200 hover:-translate-y-0.5 hover:scale-110 text-[11px] font-normal text-violet-600 hover:bg-violet-100 dark:text-violet-400 dark:hover:bg-violet-950/40">Management</span></span>
-              <span class="inline-block" style="transform: rotate(4deg) translateY(3px)"><span class="inline-block cursor-default rounded-md px-1.5 py-0.5 leading-none transition-transform duration-200 hover:-translate-y-0.5 hover:scale-110 text-[10px] font-normal text-sky-600 hover:bg-sky-100 dark:text-sky-400 dark:hover:bg-sky-950/40">Project Management</span></span>
-              <span class="inline-block" style="transform: rotate(4deg) translateY(2px)"><span class="inline-block cursor-default rounded-md px-1.5 py-0.5 leading-none transition-transform duration-200 hover:-translate-y-0.5 hover:scale-110 text-xs font-normal text-sky-600 hover:bg-sky-100 dark:text-sky-400 dark:hover:bg-sky-950/40">Team Leader</span></span>
-              <span class="inline-block" style="transform: rotate(4deg) translateY(3px)"><span class="inline-block cursor-default rounded-md px-1.5 py-0.5 leading-none transition-transform duration-200 hover:-translate-y-0.5 hover:scale-110 text-[13px] font-medium text-orange-600 hover:bg-orange-100 dark:text-orange-400 dark:hover:bg-orange-950/40">Coordinator</span></span>
-              <span class="inline-block" style="transform: rotate(-2deg) translateY(2px)"><span class="inline-block cursor-default rounded-md px-1.5 py-0.5 leading-none transition-transform duration-200 hover:-translate-y-0.5 hover:scale-110 text-[11px] font-normal text-fuchsia-600 hover:bg-fuchsia-100 dark:text-fuchsia-400 dark:hover:bg-fuchsia-950/40">Organizer</span></span>
-              <span class="inline-block" style="transform: rotate(2deg) translateY(3px)"><span class="inline-block cursor-default rounded-md px-1.5 py-0.5 leading-none transition-transform duration-200 hover:-translate-y-0.5 hover:scale-110 text-xs font-normal text-sky-600 hover:bg-sky-100 dark:text-sky-400 dark:hover:bg-sky-950/40">Facilitator</span></span>
-              <span class="inline-block" style="transform: rotate(3deg) translateY(-2px)"><span class="inline-block cursor-default rounded-md px-1.5 py-0.5 leading-none transition-transform duration-200 hover:-translate-y-0.5 hover:scale-110 text-[10px] font-normal text-amber-600 hover:bg-amber-100 dark:text-amber-400 dark:hover:bg-amber-950/40">Supervisor</span></span>
-              <span class="inline-block" style="transform: rotate(2deg) translateY(3px)"><span class="inline-block cursor-default rounded-md px-1.5 py-0.5 leading-none transition-transform duration-200 hover:-translate-y-0.5 hover:scale-110 text-[10px] font-normal text-orange-600 hover:bg-orange-100 dark:text-orange-400 dark:hover:bg-orange-950/40">Teamwork</span></span>
-              <span class="inline-block" style="transform: rotate(4deg) translateY(3px)"><span class="inline-block cursor-default rounded-md px-1.5 py-0.5 leading-none transition-transform duration-200 hover:-translate-y-0.5 hover:scale-110 text-xs font-medium text-violet-600 hover:bg-violet-100 dark:text-violet-400 dark:hover:bg-violet-950/40">Collaboration</span></span>
-              <span class="inline-block" style="transform: rotate(3deg) translateY(2px)"><span class="inline-block cursor-default rounded-md px-1.5 py-0.5 leading-none transition-transform duration-200 hover:-translate-y-0.5 hover:scale-110 text-xs font-normal text-emerald-600 hover:bg-emerald-100 dark:text-emerald-400 dark:hover:bg-emerald-950/40">Communication</span></span>
-              <span class="inline-block" style="transform: rotate(4deg) translateY(1px)"><span class="inline-block cursor-default rounded-md px-1.5 py-0.5 leading-none transition-transform duration-200 hover:-translate-y-0.5 hover:scale-110 text-[13px] font-medium text-sky-600 hover:bg-sky-100 dark:text-sky-400 dark:hover:bg-sky-950/40">Administrative Skills</span></span>
-              <span class="inline-block" style="transform: rotate(-1deg) translateY(2px)"><span class="inline-block cursor-default rounded-md px-1.5 py-0.5 leading-none transition-transform duration-200 hover:-translate-y-0.5 hover:scale-110 text-[13px] font-medium text-emerald-600 hover:bg-emerald-100 dark:text-emerald-400 dark:hover:bg-emerald-950/40">Time Management</span></span>
-              <span class="inline-block" style="transform: rotate(-1deg) translateY(2px)"><span class="inline-block cursor-default rounded-md px-1.5 py-0.5 leading-none transition-transform duration-200 hover:-translate-y-0.5 hover:scale-110 text-[10px] font-normal text-fuchsia-600 hover:bg-fuchsia-100 dark:text-fuchsia-400 dark:hover:bg-fuchsia-950/40">Planning</span></span>
-              <span class="inline-block" style="transform: rotate(0deg) translateY(2px)"><span class="inline-block cursor-default rounded-md px-1.5 py-0.5 leading-none transition-transform duration-200 hover:-translate-y-0.5 hover:scale-110 text-[10px] font-normal text-rose-600 hover:bg-rose-100 dark:text-rose-400 dark:hover:bg-rose-950/40">Prioritization</span></span>
-              <span class="inline-block" style="transform: rotate(0deg) translateY(-2px)"><span class="inline-block cursor-default rounded-md px-1.5 py-0.5 leading-none transition-transform duration-200 hover:-translate-y-0.5 hover:scale-110 text-xs font-normal text-emerald-600 hover:bg-emerald-100 dark:text-emerald-400 dark:hover:bg-emerald-950/40">Multitasking</span></span>
-              <span class="inline-block" style="transform: rotate(-2deg) translateY(0px)"><span class="inline-block cursor-default rounded-md px-1.5 py-0.5 leading-none transition-transform duration-200 hover:-translate-y-0.5 hover:scale-110 text-[10px] font-normal text-amber-600 hover:bg-amber-100 dark:text-amber-400 dark:hover:bg-amber-950/40">Decision Maker</span></span>
-              <span class="inline-block" style="transform: rotate(-1deg) translateY(2px)"><span class="inline-block cursor-default rounded-md px-1.5 py-0.5 leading-none transition-transform duration-200 hover:-translate-y-0.5 hover:scale-110 text-[13px] font-medium text-emerald-600 hover:bg-emerald-100 dark:text-emerald-400 dark:hover:bg-emerald-950/40">Problem Solver</span></span>
-              <span class="inline-block" style="transform: rotate(0deg) translateY(1px)"><span class="inline-block cursor-default rounded-md px-1.5 py-0.5 leading-none transition-transform duration-200 hover:-translate-y-0.5 hover:scale-110 text-[10px] font-normal text-rose-600 hover:bg-rose-100 dark:text-rose-400 dark:hover:bg-rose-950/40">Analytical Thinker</span></span>
-              <span class="inline-block" style="transform: rotate(0deg) translateY(-2px)"><span class="inline-block cursor-default rounded-md px-1.5 py-0.5 leading-none transition-transform duration-200 hover:-translate-y-0.5 hover:scale-110 text-[10px] font-normal text-violet-600 hover:bg-violet-100 dark:text-violet-400 dark:hover:bg-violet-950/40">Results-Driven</span></span>
-              <span class="inline-block" style="transform: rotate(-2deg) translateY(1px)"><span class="inline-block cursor-default rounded-md px-1.5 py-0.5 leading-none transition-transform duration-200 hover:-translate-y-0.5 hover:scale-110 text-[11px] font-normal text-teal-600 hover:bg-teal-100 dark:text-teal-400 dark:hover:bg-teal-950/40">Proactive</span></span>
-              <span class="inline-block" style="transform: rotate(2deg) translateY(2px)"><span class="inline-block cursor-default rounded-md px-1.5 py-0.5 leading-none transition-transform duration-200 hover:-translate-y-0.5 hover:scale-110 text-[10px] font-normal text-rose-600 hover:bg-rose-100 dark:text-rose-400 dark:hover:bg-rose-950/40">Organized</span></span>
-              <span class="inline-block" style="transform: rotate(-4deg) translateY(3px)"><span class="inline-block cursor-default rounded-md px-1.5 py-0.5 leading-none transition-transform duration-200 hover:-translate-y-0.5 hover:scale-110 text-[13px] font-medium text-orange-600 hover:bg-orange-100 dark:text-orange-400 dark:hover:bg-orange-950/40">Detail-Oriented</span></span>
-              <span class="inline-block" style="transform: rotate(0deg) translateY(-3px)"><span class="inline-block cursor-default rounded-md px-1.5 py-0.5 leading-none transition-transform duration-200 hover:-translate-y-0.5 hover:scale-110 text-[13px] font-medium text-sky-600 hover:bg-sky-100 dark:text-sky-400 dark:hover:bg-sky-950/40">Reliable</span></span>
-              <span class="inline-block" style="transform: rotate(1deg) translateY(-1px)"><span class="inline-block cursor-default rounded-md px-1.5 py-0.5 leading-none transition-transform duration-200 hover:-translate-y-0.5 hover:scale-110 text-[11px] font-normal text-fuchsia-600 hover:bg-fuchsia-100 dark:text-fuchsia-400 dark:hover:bg-fuchsia-950/40">Accountable</span></span>
-              <span class="inline-block" style="transform: rotate(4deg) translateY(-1px)"><span class="inline-block cursor-default rounded-md px-1.5 py-0.5 leading-none transition-transform duration-200 hover:-translate-y-0.5 hover:scale-110 text-[10px] font-normal text-fuchsia-600 hover:bg-fuchsia-100 dark:text-fuchsia-400 dark:hover:bg-fuchsia-950/40">Resourceful</span></span>
-              <span class="inline-block" style="transform: rotate(-2deg) translateY(0px)"><span class="inline-block cursor-default rounded-md px-1.5 py-0.5 leading-none transition-transform duration-200 hover:-translate-y-0.5 hover:scale-110 text-[11px] font-normal text-rose-600 hover:bg-rose-100 dark:text-rose-400 dark:hover:bg-rose-950/40">Professional</span></span>
-              <span class="inline-block" style="transform: rotate(-3deg) translateY(1px)"><span class="inline-block cursor-default rounded-md px-1.5 py-0.5 leading-none transition-transform duration-200 hover:-translate-y-0.5 hover:scale-110 text-[10px] font-normal text-emerald-600 hover:bg-emerald-100 dark:text-emerald-400 dark:hover:bg-emerald-950/40">Ethical</span></span>
-              <span class="inline-block" style="transform: rotate(4deg) translateY(-3px)"><span class="inline-block cursor-default rounded-md px-1.5 py-0.5 leading-none transition-transform duration-200 hover:-translate-y-0.5 hover:scale-110 text-[13px] font-medium text-sky-600 hover:bg-sky-100 dark:text-sky-400 dark:hover:bg-sky-950/40">Adaptable</span></span>
-              <span class="inline-block" style="transform: rotate(0deg) translateY(-2px)"><span class="inline-block cursor-default rounded-md px-1.5 py-0.5 leading-none transition-transform duration-200 hover:-translate-y-0.5 hover:scale-110 text-xs font-medium text-violet-600 hover:bg-violet-100 dark:text-violet-400 dark:hover:bg-violet-950/40">Resilient</span></span>
-              <span class="inline-block" style="transform: rotate(0deg) translateY(-1px)"><span class="inline-block cursor-default rounded-md px-1.5 py-0.5 leading-none transition-transform duration-200 hover:-translate-y-0.5 hover:scale-110 text-[10px] font-normal text-sky-600 hover:bg-sky-100 dark:text-sky-400 dark:hover:bg-sky-950/40">Committed</span></span>
-              <span class="inline-block" style="transform: rotate(4deg) translateY(2px)"><span class="inline-block cursor-default rounded-md px-1.5 py-0.5 leading-none transition-transform duration-200 hover:-translate-y-0.5 hover:scale-110 text-[13px] font-medium text-amber-600 hover:bg-amber-100 dark:text-amber-400 dark:hover:bg-amber-950/40">Adaptability</span></span>
-              <span class="inline-block" style="transform: rotate(3deg) translateY(2px)"><span class="inline-block cursor-default rounded-md px-1.5 py-0.5 leading-none transition-transform duration-200 hover:-translate-y-0.5 hover:scale-110 text-[13px] font-medium text-amber-600 hover:bg-amber-100 dark:text-amber-400 dark:hover:bg-amber-950/40">Creativity</span></span>
-              <span class="inline-block" style="transform: rotate(0deg) translateY(-3px)"><span class="inline-block cursor-default rounded-md px-1.5 py-0.5 leading-none transition-transform duration-200 hover:-translate-y-0.5 hover:scale-110 text-[10px] font-normal text-violet-600 hover:bg-violet-100 dark:text-violet-400 dark:hover:bg-violet-950/40">Integrity</span></span>
-              <span class="inline-block" style="transform: rotate(1deg) translateY(0px)"><span class="inline-block cursor-default rounded-md px-1.5 py-0.5 leading-none transition-transform duration-200 hover:-translate-y-0.5 hover:scale-110 text-[13px] font-medium text-amber-600 hover:bg-amber-100 dark:text-amber-400 dark:hover:bg-amber-950/40">Excellence</span></span>
-              <span class="inline-block" style="transform: rotate(-4deg) translateY(2px)"><span class="inline-block cursor-default rounded-md px-1.5 py-0.5 leading-none transition-transform duration-200 hover:-translate-y-0.5 hover:scale-110 text-xs font-normal text-amber-600 hover:bg-amber-100 dark:text-amber-400 dark:hover:bg-amber-950/40">Scientific Research</span></span>
-              <span class="inline-block" style="transform: rotate(3deg) translateY(-1px)"><span class="inline-block cursor-default rounded-md px-1.5 py-0.5 leading-none transition-transform duration-200 hover:-translate-y-0.5 hover:scale-110 text-[10px] font-normal text-fuchsia-600 hover:bg-fuchsia-100 dark:text-fuchsia-400 dark:hover:bg-fuchsia-950/40">Scientific Writing</span></span>
-              <span class="inline-block" style="transform: rotate(1deg) translateY(2px)"><span class="inline-block cursor-default rounded-md px-1.5 py-0.5 leading-none transition-transform duration-200 hover:-translate-y-0.5 hover:scale-110 text-[11px] font-normal text-rose-600 hover:bg-rose-100 dark:text-rose-400 dark:hover:bg-rose-950/40">Publications</span></span>
-              <span class="inline-block" style="transform: rotate(2deg) translateY(-3px)"><span class="inline-block cursor-default rounded-md px-1.5 py-0.5 leading-none transition-transform duration-200 hover:-translate-y-0.5 hover:scale-110 text-xs font-medium text-fuchsia-600 hover:bg-fuchsia-100 dark:text-fuchsia-400 dark:hover:bg-fuchsia-950/40">Knowledge Management</span></span>
-              <span class="inline-block" style="transform: rotate(-2deg) translateY(-2px)"><span class="inline-block cursor-default rounded-md px-1.5 py-0.5 leading-none transition-transform duration-200 hover:-translate-y-0.5 hover:scale-110 text-xs font-medium text-fuchsia-600 hover:bg-fuchsia-100 dark:text-fuchsia-400 dark:hover:bg-fuchsia-950/40">Continuous Learning</span></span>
+              <span class="inline-block" style="transform: rotate(-4deg) translateY(-3px)"><span class="inline-block cursor-default rounded-md px-1.5 py-0.5 leading-none transition-transform duration-200 hover:-translate-y-0.5 hover:scale-110 text-[11px] font-normal text-[#6b6155] dark:text-[#b3a692]">Artificial Intelligence</span></span>
+              <span class="inline-block" style="transform: rotate(-1deg) translateY(0px)"><span class="inline-block cursor-default rounded-md px-1.5 py-0.5 leading-none transition-transform duration-200 hover:-translate-y-0.5 hover:scale-110 text-[11px] font-normal text-[#6b6155] dark:text-[#b3a692]">Machine Learning</span></span>
+              <span class="inline-block" style="transform: rotate(3deg) translateY(0px)"><span class="inline-block cursor-default rounded-md px-1.5 py-0.5 leading-none transition-transform duration-200 hover:-translate-y-0.5 hover:scale-110 text-xs font-normal text-[#6b6155] dark:text-[#b3a692]">Deep Learning</span></span>
+              <span class="inline-block" style="transform: rotate(3deg) translateY(-1px)"><span class="inline-block cursor-default rounded-md px-1.5 py-0.5 leading-none transition-transform duration-200 hover:-translate-y-0.5 hover:scale-110 text-[10px] font-normal text-[#6b6155] dark:text-[#b3a692]">Explainable AI</span></span>
+              <span class="inline-block" style="transform: rotate(3deg) translateY(1px)"><span class="inline-block cursor-default rounded-md px-1.5 py-0.5 leading-none transition-transform duration-200 hover:-translate-y-0.5 hover:scale-110 text-[10px] font-normal text-[#b3491f] dark:text-[#e2703f]">SHAP</span></span>
+              <span class="inline-block" style="transform: rotate(-4deg) translateY(2px)"><span class="inline-block cursor-default rounded-md px-1.5 py-0.5 leading-none transition-transform duration-200 hover:-translate-y-0.5 hover:scale-110 text-[11px] font-normal text-[#6b6155] dark:text-[#b3a692]">Feature Engineering</span></span>
+              <span class="inline-block" style="transform: rotate(4deg) translateY(1px)"><span class="inline-block cursor-default rounded-md px-1.5 py-0.5 leading-none transition-transform duration-200 hover:-translate-y-0.5 hover:scale-110 text-[10px] font-normal text-[#1b1815] dark:text-[#f3ede2]">XGBoost</span></span>
+              <span class="inline-block" style="transform: rotate(4deg) translateY(3px)"><span class="inline-block cursor-default rounded-md px-1.5 py-0.5 leading-none transition-transform duration-200 hover:-translate-y-0.5 hover:scale-110 text-[10px] font-normal text-[#6b6155] dark:text-[#b3a692]">Random Forest</span></span>
+              <span class="inline-block" style="transform: rotate(-4deg) translateY(-1px)"><span class="inline-block cursor-default rounded-md px-1.5 py-0.5 leading-none transition-transform duration-200 hover:-translate-y-0.5 hover:scale-110 text-[13px] font-medium text-[#6b6155] dark:text-[#b3a692]">Decision Tree</span></span>
+              <span class="inline-block" style="transform: rotate(0deg) translateY(0px)"><span class="inline-block cursor-default rounded-md px-1.5 py-0.5 leading-none transition-transform duration-200 hover:-translate-y-0.5 hover:scale-110 text-xs font-normal text-[#1b1815] dark:text-[#f3ede2]">Linear Regression</span></span>
+              <span class="inline-block" style="transform: rotate(0deg) translateY(-3px)"><span class="inline-block cursor-default rounded-md px-1.5 py-0.5 leading-none transition-transform duration-200 hover:-translate-y-0.5 hover:scale-110 text-xs font-normal text-[#b3491f] dark:text-[#e2703f]">Neural Networks</span></span>
+              <span class="inline-block" style="transform: rotate(-3deg) translateY(1px)"><span class="inline-block cursor-default rounded-md px-1.5 py-0.5 leading-none transition-transform duration-200 hover:-translate-y-0.5 hover:scale-110 text-xs font-normal text-[#6b6155] dark:text-[#b3a692]">Data Analytics</span></span>
+              <span class="inline-block" style="transform: rotate(-2deg) translateY(-1px)"><span class="inline-block cursor-default rounded-md px-1.5 py-0.5 leading-none transition-transform duration-200 hover:-translate-y-0.5 hover:scale-110 text-[10px] font-normal text-[#6b6155] dark:text-[#b3a692]">Predictive Analytics</span></span>
+              <span class="inline-block" style="transform: rotate(1deg) translateY(-1px)"><span class="inline-block cursor-default rounded-md px-1.5 py-0.5 leading-none transition-transform duration-200 hover:-translate-y-0.5 hover:scale-110 text-[13px] font-medium text-[#b3491f] dark:text-[#e2703f]">Data Mining</span></span>
+              <span class="inline-block" style="transform: rotate(0deg) translateY(3px)"><span class="inline-block cursor-default rounded-md px-1.5 py-0.5 leading-none transition-transform duration-200 hover:-translate-y-0.5 hover:scale-110 text-xs font-medium text-[#6b6155] dark:text-[#b3a692]">Statistical Analysis</span></span>
+              <span class="inline-block" style="transform: rotate(-4deg) translateY(1px)"><span class="inline-block cursor-default rounded-md px-1.5 py-0.5 leading-none transition-transform duration-200 hover:-translate-y-0.5 hover:scale-110 text-[10px] font-normal text-[#6b6155] dark:text-[#b3a692]">Quantitative Analysis</span></span>
+              <span class="inline-block" style="transform: rotate(3deg) translateY(-1px)"><span class="inline-block cursor-default rounded-md px-1.5 py-0.5 leading-none transition-transform duration-200 hover:-translate-y-0.5 hover:scale-110 text-xs font-medium text-[#6b6155] dark:text-[#b3a692]">Operations Research</span></span>
+              <span class="inline-block" style="transform: rotate(-4deg) translateY(3px)"><span class="inline-block cursor-default rounded-md px-1.5 py-0.5 leading-none transition-transform duration-200 hover:-translate-y-0.5 hover:scale-110 text-[10px] font-normal text-[#6b6155] dark:text-[#b3a692]">Mathematical Modeling</span></span>
+              <span class="inline-block" style="transform: rotate(3deg) translateY(1px)"><span class="inline-block cursor-default rounded-md px-1.5 py-0.5 leading-none transition-transform duration-200 hover:-translate-y-0.5 hover:scale-110 text-[10px] font-normal text-[#6b6155] dark:text-[#b3a692]">Optimization</span></span>
+              <span class="inline-block" style="transform: rotate(2deg) translateY(-2px)"><span class="inline-block cursor-default rounded-md px-1.5 py-0.5 leading-none transition-transform duration-200 hover:-translate-y-0.5 hover:scale-110 text-[10px] font-normal text-[#6b6155] dark:text-[#b3a692]">Multi-Objective Optimization</span></span>
+              <span class="inline-block" style="transform: rotate(-1deg) translateY(-1px)"><span class="inline-block cursor-default rounded-md px-1.5 py-0.5 leading-none transition-transform duration-200 hover:-translate-y-0.5 hover:scale-110 text-[13px] font-medium text-[#b3491f] dark:text-[#e2703f]">NSGA-II</span></span>
+              <span class="inline-block" style="transform: rotate(1deg) translateY(-1px)"><span class="inline-block cursor-default rounded-md px-1.5 py-0.5 leading-none transition-transform duration-200 hover:-translate-y-0.5 hover:scale-110 text-[11px] font-normal text-[#6b6155] dark:text-[#b3a692]">NSGA-III</span></span>
+              <span class="inline-block" style="transform: rotate(-1deg) translateY(3px)"><span class="inline-block cursor-default rounded-md px-1.5 py-0.5 leading-none transition-transform duration-200 hover:-translate-y-0.5 hover:scale-110 text-[10px] font-normal text-[#6b6155] dark:text-[#b3a692]">Particle Swarm Optimization</span></span>
+              <span class="inline-block" style="transform: rotate(-2deg) translateY(2px)"><span class="inline-block cursor-default rounded-md px-1.5 py-0.5 leading-none transition-transform duration-200 hover:-translate-y-0.5 hover:scale-110 text-[10px] font-normal text-[#4b5d45] dark:text-[#8ba382]">Metaheuristics</span></span>
+              <span class="inline-block" style="transform: rotate(-3deg) translateY(2px)"><span class="inline-block cursor-default rounded-md px-1.5 py-0.5 leading-none transition-transform duration-200 hover:-translate-y-0.5 hover:scale-110 text-[11px] font-normal text-[#6b6155] dark:text-[#b3a692]">Decision Optimization</span></span>
+              <span class="inline-block" style="transform: rotate(-2deg) translateY(3px)"><span class="inline-block cursor-default rounded-md px-1.5 py-0.5 leading-none transition-transform duration-200 hover:-translate-y-0.5 hover:scale-110 text-xs font-medium text-[#6b6155] dark:text-[#b3a692]">Decision Support</span></span>
+              <span class="inline-block" style="transform: rotate(0deg) translateY(0px)"><span class="inline-block cursor-default rounded-md px-1.5 py-0.5 leading-none transition-transform duration-200 hover:-translate-y-0.5 hover:scale-110 text-[10px] font-normal text-[#6b6155] dark:text-[#b3a692]">Revenue Management</span></span>
+              <span class="inline-block" style="transform: rotate(0deg) translateY(1px)"><span class="inline-block cursor-default rounded-md px-1.5 py-0.5 leading-none transition-transform duration-200 hover:-translate-y-0.5 hover:scale-110 text-[11px] font-normal text-[#6b6155] dark:text-[#b3a692]">Hotel Revenue Management</span></span>
+              <span class="inline-block" style="transform: rotate(4deg) translateY(1px)"><span class="inline-block cursor-default rounded-md px-1.5 py-0.5 leading-none transition-transform duration-200 hover:-translate-y-0.5 hover:scale-110 text-xs font-medium text-[#6b6155] dark:text-[#b3a692]">Dynamic Pricing</span></span>
+              <span class="inline-block" style="transform: rotate(1deg) translateY(1px)"><span class="inline-block cursor-default rounded-md px-1.5 py-0.5 leading-none transition-transform duration-200 hover:-translate-y-0.5 hover:scale-110 text-xs font-medium text-[#6b6155] dark:text-[#b3a692]">Pricing Strategy</span></span>
+              <span class="inline-block" style="transform: rotate(-3deg) translateY(1px)"><span class="inline-block cursor-default rounded-md px-1.5 py-0.5 leading-none transition-transform duration-200 hover:-translate-y-0.5 hover:scale-110 text-xs font-normal text-[#1b1815] dark:text-[#f3ede2]">Demand Forecasting</span></span>
+              <span class="inline-block" style="transform: rotate(-4deg) translateY(-1px)"><span class="inline-block cursor-default rounded-md px-1.5 py-0.5 leading-none transition-transform duration-200 hover:-translate-y-0.5 hover:scale-110 text-[13px] font-medium text-[#6b6155] dark:text-[#b3a692]">Resource Allocation</span></span>
+              <span class="inline-block" style="transform: rotate(-3deg) translateY(0px)"><span class="inline-block cursor-default rounded-md px-1.5 py-0.5 leading-none transition-transform duration-200 hover:-translate-y-0.5 hover:scale-110 text-[10px] font-normal text-[#4b5d45] dark:text-[#8ba382]">Profit Maximization</span></span>
+              <span class="inline-block" style="transform: rotate(3deg) translateY(0px)"><span class="inline-block cursor-default rounded-md px-1.5 py-0.5 leading-none transition-transform duration-200 hover:-translate-y-0.5 hover:scale-110 text-[11px] font-normal text-[#6b6155] dark:text-[#b3a692]">Strategic Management</span></span>
+              <span class="inline-block" style="transform: rotate(4deg) translateY(0px)"><span class="inline-block cursor-default rounded-md px-1.5 py-0.5 leading-none transition-transform duration-200 hover:-translate-y-0.5 hover:scale-110 text-[10px] font-normal text-[#6b6155] dark:text-[#b3a692]">Strategic Thinking</span></span>
+              <span class="inline-block" style="transform: rotate(-4deg) translateY(0px)"><span class="inline-block cursor-default rounded-md px-1.5 py-0.5 leading-none transition-transform duration-200 hover:-translate-y-0.5 hover:scale-110 text-xs font-medium text-[#6b6155] dark:text-[#b3a692]">Critical Thinking</span></span>
+              <span class="inline-block" style="transform: rotate(-2deg) translateY(2px)"><span class="inline-block cursor-default rounded-md px-1.5 py-0.5 leading-none transition-transform duration-200 hover:-translate-y-0.5 hover:scale-110 text-xs font-medium text-[#6b6155] dark:text-[#b3a692]">Problem Solving</span></span>
+              <span class="inline-block" style="transform: rotate(0deg) translateY(-2px)"><span class="inline-block cursor-default rounded-md px-1.5 py-0.5 leading-none transition-transform duration-200 hover:-translate-y-0.5 hover:scale-110 text-[11px] font-normal text-[#6b6155] dark:text-[#b3a692]">Innovation</span></span>
+              <span class="inline-block" style="transform: rotate(-2deg) translateY(-1px)"><span class="inline-block cursor-default rounded-md px-1.5 py-0.5 leading-none transition-transform duration-200 hover:-translate-y-0.5 hover:scale-110 text-[10px] font-normal text-[#6b6155] dark:text-[#b3a692]">Leadership</span></span>
+              <span class="inline-block" style="transform: rotate(1deg) translateY(-3px)"><span class="inline-block cursor-default rounded-md px-1.5 py-0.5 leading-none transition-transform duration-200 hover:-translate-y-0.5 hover:scale-110 text-[11px] font-normal text-[#6b6155] dark:text-[#b3a692]">Management</span></span>
+              <span class="inline-block" style="transform: rotate(4deg) translateY(3px)"><span class="inline-block cursor-default rounded-md px-1.5 py-0.5 leading-none transition-transform duration-200 hover:-translate-y-0.5 hover:scale-110 text-[10px] font-normal text-[#1b1815] dark:text-[#f3ede2]">Project Management</span></span>
+              <span class="inline-block" style="transform: rotate(4deg) translateY(2px)"><span class="inline-block cursor-default rounded-md px-1.5 py-0.5 leading-none transition-transform duration-200 hover:-translate-y-0.5 hover:scale-110 text-xs font-normal text-[#1b1815] dark:text-[#f3ede2]">Team Leader</span></span>
+              <span class="inline-block" style="transform: rotate(4deg) translateY(3px)"><span class="inline-block cursor-default rounded-md px-1.5 py-0.5 leading-none transition-transform duration-200 hover:-translate-y-0.5 hover:scale-110 text-[13px] font-medium text-[#4b5d45] dark:text-[#8ba382]">Coordinator</span></span>
+              <span class="inline-block" style="transform: rotate(-2deg) translateY(2px)"><span class="inline-block cursor-default rounded-md px-1.5 py-0.5 leading-none transition-transform duration-200 hover:-translate-y-0.5 hover:scale-110 text-[11px] font-normal text-[#6b6155] dark:text-[#b3a692]">Organizer</span></span>
+              <span class="inline-block" style="transform: rotate(2deg) translateY(3px)"><span class="inline-block cursor-default rounded-md px-1.5 py-0.5 leading-none transition-transform duration-200 hover:-translate-y-0.5 hover:scale-110 text-xs font-normal text-[#1b1815] dark:text-[#f3ede2]">Facilitator</span></span>
+              <span class="inline-block" style="transform: rotate(3deg) translateY(-2px)"><span class="inline-block cursor-default rounded-md px-1.5 py-0.5 leading-none transition-transform duration-200 hover:-translate-y-0.5 hover:scale-110 text-[10px] font-normal text-[#6b6155] dark:text-[#b3a692]">Supervisor</span></span>
+              <span class="inline-block" style="transform: rotate(2deg) translateY(3px)"><span class="inline-block cursor-default rounded-md px-1.5 py-0.5 leading-none transition-transform duration-200 hover:-translate-y-0.5 hover:scale-110 text-[10px] font-normal text-[#4b5d45] dark:text-[#8ba382]">Teamwork</span></span>
+              <span class="inline-block" style="transform: rotate(4deg) translateY(3px)"><span class="inline-block cursor-default rounded-md px-1.5 py-0.5 leading-none transition-transform duration-200 hover:-translate-y-0.5 hover:scale-110 text-xs font-medium text-[#6b6155] dark:text-[#b3a692]">Collaboration</span></span>
+              <span class="inline-block" style="transform: rotate(3deg) translateY(2px)"><span class="inline-block cursor-default rounded-md px-1.5 py-0.5 leading-none transition-transform duration-200 hover:-translate-y-0.5 hover:scale-110 text-xs font-normal text-[#b3491f] dark:text-[#e2703f]">Communication</span></span>
+              <span class="inline-block" style="transform: rotate(4deg) translateY(1px)"><span class="inline-block cursor-default rounded-md px-1.5 py-0.5 leading-none transition-transform duration-200 hover:-translate-y-0.5 hover:scale-110 text-[13px] font-medium text-[#1b1815] dark:text-[#f3ede2]">Administrative Skills</span></span>
+              <span class="inline-block" style="transform: rotate(-1deg) translateY(2px)"><span class="inline-block cursor-default rounded-md px-1.5 py-0.5 leading-none transition-transform duration-200 hover:-translate-y-0.5 hover:scale-110 text-[13px] font-medium text-[#b3491f] dark:text-[#e2703f]">Time Management</span></span>
+              <span class="inline-block" style="transform: rotate(-1deg) translateY(2px)"><span class="inline-block cursor-default rounded-md px-1.5 py-0.5 leading-none transition-transform duration-200 hover:-translate-y-0.5 hover:scale-110 text-[10px] font-normal text-[#6b6155] dark:text-[#b3a692]">Planning</span></span>
+              <span class="inline-block" style="transform: rotate(0deg) translateY(2px)"><span class="inline-block cursor-default rounded-md px-1.5 py-0.5 leading-none transition-transform duration-200 hover:-translate-y-0.5 hover:scale-110 text-[10px] font-normal text-[#6b6155] dark:text-[#b3a692]">Prioritization</span></span>
+              <span class="inline-block" style="transform: rotate(0deg) translateY(-2px)"><span class="inline-block cursor-default rounded-md px-1.5 py-0.5 leading-none transition-transform duration-200 hover:-translate-y-0.5 hover:scale-110 text-xs font-normal text-[#b3491f] dark:text-[#e2703f]">Multitasking</span></span>
+              <span class="inline-block" style="transform: rotate(-2deg) translateY(0px)"><span class="inline-block cursor-default rounded-md px-1.5 py-0.5 leading-none transition-transform duration-200 hover:-translate-y-0.5 hover:scale-110 text-[10px] font-normal text-[#6b6155] dark:text-[#b3a692]">Decision Maker</span></span>
+              <span class="inline-block" style="transform: rotate(-1deg) translateY(2px)"><span class="inline-block cursor-default rounded-md px-1.5 py-0.5 leading-none transition-transform duration-200 hover:-translate-y-0.5 hover:scale-110 text-[13px] font-medium text-[#b3491f] dark:text-[#e2703f]">Problem Solver</span></span>
+              <span class="inline-block" style="transform: rotate(0deg) translateY(1px)"><span class="inline-block cursor-default rounded-md px-1.5 py-0.5 leading-none transition-transform duration-200 hover:-translate-y-0.5 hover:scale-110 text-[10px] font-normal text-[#6b6155] dark:text-[#b3a692]">Analytical Thinker</span></span>
+              <span class="inline-block" style="transform: rotate(0deg) translateY(-2px)"><span class="inline-block cursor-default rounded-md px-1.5 py-0.5 leading-none transition-transform duration-200 hover:-translate-y-0.5 hover:scale-110 text-[10px] font-normal text-[#6b6155] dark:text-[#b3a692]">Results-Driven</span></span>
+              <span class="inline-block" style="transform: rotate(-2deg) translateY(1px)"><span class="inline-block cursor-default rounded-md px-1.5 py-0.5 leading-none transition-transform duration-200 hover:-translate-y-0.5 hover:scale-110 text-[11px] font-normal text-[#6b6155] dark:text-[#b3a692]">Proactive</span></span>
+              <span class="inline-block" style="transform: rotate(2deg) translateY(2px)"><span class="inline-block cursor-default rounded-md px-1.5 py-0.5 leading-none transition-transform duration-200 hover:-translate-y-0.5 hover:scale-110 text-[10px] font-normal text-[#6b6155] dark:text-[#b3a692]">Organized</span></span>
+              <span class="inline-block" style="transform: rotate(-4deg) translateY(3px)"><span class="inline-block cursor-default rounded-md px-1.5 py-0.5 leading-none transition-transform duration-200 hover:-translate-y-0.5 hover:scale-110 text-[13px] font-medium text-[#4b5d45] dark:text-[#8ba382]">Detail-Oriented</span></span>
+              <span class="inline-block" style="transform: rotate(0deg) translateY(-3px)"><span class="inline-block cursor-default rounded-md px-1.5 py-0.5 leading-none transition-transform duration-200 hover:-translate-y-0.5 hover:scale-110 text-[13px] font-medium text-[#1b1815] dark:text-[#f3ede2]">Reliable</span></span>
+              <span class="inline-block" style="transform: rotate(1deg) translateY(-1px)"><span class="inline-block cursor-default rounded-md px-1.5 py-0.5 leading-none transition-transform duration-200 hover:-translate-y-0.5 hover:scale-110 text-[11px] font-normal text-[#6b6155] dark:text-[#b3a692]">Accountable</span></span>
+              <span class="inline-block" style="transform: rotate(4deg) translateY(-1px)"><span class="inline-block cursor-default rounded-md px-1.5 py-0.5 leading-none transition-transform duration-200 hover:-translate-y-0.5 hover:scale-110 text-[10px] font-normal text-[#6b6155] dark:text-[#b3a692]">Resourceful</span></span>
+              <span class="inline-block" style="transform: rotate(-2deg) translateY(0px)"><span class="inline-block cursor-default rounded-md px-1.5 py-0.5 leading-none transition-transform duration-200 hover:-translate-y-0.5 hover:scale-110 text-[11px] font-normal text-[#6b6155] dark:text-[#b3a692]">Professional</span></span>
+              <span class="inline-block" style="transform: rotate(-3deg) translateY(1px)"><span class="inline-block cursor-default rounded-md px-1.5 py-0.5 leading-none transition-transform duration-200 hover:-translate-y-0.5 hover:scale-110 text-[10px] font-normal text-[#b3491f] dark:text-[#e2703f]">Ethical</span></span>
+              <span class="inline-block" style="transform: rotate(4deg) translateY(-3px)"><span class="inline-block cursor-default rounded-md px-1.5 py-0.5 leading-none transition-transform duration-200 hover:-translate-y-0.5 hover:scale-110 text-[13px] font-medium text-[#1b1815] dark:text-[#f3ede2]">Adaptable</span></span>
+              <span class="inline-block" style="transform: rotate(0deg) translateY(-2px)"><span class="inline-block cursor-default rounded-md px-1.5 py-0.5 leading-none transition-transform duration-200 hover:-translate-y-0.5 hover:scale-110 text-xs font-medium text-[#6b6155] dark:text-[#b3a692]">Resilient</span></span>
+              <span class="inline-block" style="transform: rotate(0deg) translateY(-1px)"><span class="inline-block cursor-default rounded-md px-1.5 py-0.5 leading-none transition-transform duration-200 hover:-translate-y-0.5 hover:scale-110 text-[10px] font-normal text-[#1b1815] dark:text-[#f3ede2]">Committed</span></span>
+              <span class="inline-block" style="transform: rotate(4deg) translateY(2px)"><span class="inline-block cursor-default rounded-md px-1.5 py-0.5 leading-none transition-transform duration-200 hover:-translate-y-0.5 hover:scale-110 text-[13px] font-medium text-[#6b6155] dark:text-[#b3a692]">Adaptability</span></span>
+              <span class="inline-block" style="transform: rotate(3deg) translateY(2px)"><span class="inline-block cursor-default rounded-md px-1.5 py-0.5 leading-none transition-transform duration-200 hover:-translate-y-0.5 hover:scale-110 text-[13px] font-medium text-[#6b6155] dark:text-[#b3a692]">Creativity</span></span>
+              <span class="inline-block" style="transform: rotate(0deg) translateY(-3px)"><span class="inline-block cursor-default rounded-md px-1.5 py-0.5 leading-none transition-transform duration-200 hover:-translate-y-0.5 hover:scale-110 text-[10px] font-normal text-[#6b6155] dark:text-[#b3a692]">Integrity</span></span>
+              <span class="inline-block" style="transform: rotate(1deg) translateY(0px)"><span class="inline-block cursor-default rounded-md px-1.5 py-0.5 leading-none transition-transform duration-200 hover:-translate-y-0.5 hover:scale-110 text-[13px] font-medium text-[#6b6155] dark:text-[#b3a692]">Excellence</span></span>
+              <span class="inline-block" style="transform: rotate(-4deg) translateY(2px)"><span class="inline-block cursor-default rounded-md px-1.5 py-0.5 leading-none transition-transform duration-200 hover:-translate-y-0.5 hover:scale-110 text-xs font-normal text-[#6b6155] dark:text-[#b3a692]">Scientific Research</span></span>
+              <span class="inline-block" style="transform: rotate(3deg) translateY(-1px)"><span class="inline-block cursor-default rounded-md px-1.5 py-0.5 leading-none transition-transform duration-200 hover:-translate-y-0.5 hover:scale-110 text-[10px] font-normal text-[#6b6155] dark:text-[#b3a692]">Scientific Writing</span></span>
+              <span class="inline-block" style="transform: rotate(1deg) translateY(2px)"><span class="inline-block cursor-default rounded-md px-1.5 py-0.5 leading-none transition-transform duration-200 hover:-translate-y-0.5 hover:scale-110 text-[11px] font-normal text-[#6b6155] dark:text-[#b3a692]">Publications</span></span>
+              <span class="inline-block" style="transform: rotate(2deg) translateY(-3px)"><span class="inline-block cursor-default rounded-md px-1.5 py-0.5 leading-none transition-transform duration-200 hover:-translate-y-0.5 hover:scale-110 text-xs font-medium text-[#6b6155] dark:text-[#b3a692]">Knowledge Management</span></span>
+              <span class="inline-block" style="transform: rotate(-2deg) translateY(-2px)"><span class="inline-block cursor-default rounded-md px-1.5 py-0.5 leading-none transition-transform duration-200 hover:-translate-y-0.5 hover:scale-110 text-xs font-medium text-[#6b6155] dark:text-[#b3a692]">Continuous Learning</span></span>
           </div>
         </div>
       </section>
 
       <!-- Contact -->
-      <section id="contact-section" class="contact-section border-t border-stone-200 px-6 py-24 dark:border-stone-800">
+      <section id="contact-section" class="contact-section border-t border-rule px-6 py-24">
         <span id="contact" class="sr-only" aria-hidden="true"></span>
-        <div class="reveal relative mx-auto max-w-5xl overflow-hidden rounded-3xl bg-stone-900 px-8 py-14 dark:bg-stone-50 sm:px-16">
-          <div class="pointer-events-none absolute inset-0 -z-10">
-            <div class="absolute -top-24 -left-16 h-64 w-64 rounded-full bg-accent/30 blur-3xl"></div>
-            <div class="absolute top-1/2 -right-16 h-56 w-56 rounded-full bg-accent-2/25 blur-3xl"></div>
-            <div class="absolute -bottom-20 left-1/3 h-56 w-56 rounded-full bg-accent-3/25 blur-3xl"></div>
+        <div class="reveal relative mx-auto max-w-5xl overflow-hidden rounded-3xl bg-foreground px-8 py-14 sm:px-16">
+          <div class="pointer-events-none absolute inset-0 -z-10 opacity-90">
+            <div class="absolute -top-24 -left-16 h-64 w-64 rounded-full bg-accent/25 blur-3xl"></div>
+            <div class="absolute -bottom-20 right-0 h-64 w-64 rounded-full bg-accent-2/20 blur-3xl"></div>
           </div>
 
           <div class="text-center">
-            <h2 class="relative flex items-center justify-center gap-3 text-sm font-semibold tracking-widest text-stone-400 uppercase dark:text-stone-500">
-              <span class="h-px w-8 bg-accent"></span>
-              Contact
-              <span class="h-px w-8 bg-accent-3"></span>
-            </h2>
+            <p class="eyebrow justify-center text-background/60">
+              <span class="eyebrow-label !text-background/50">06</span> &mdash; Contact
+            </p>
 
-            <h3 class="mt-6 font-serif text-3xl font-medium text-stone-50 sm:text-4xl dark:text-stone-900">
+            <h3 class="mt-6 font-serif text-3xl font-medium text-background sm:text-4xl">
               Let&rsquo;s connect.
             </h3>
-            <p class="mx-auto mt-4 max-w-xl text-lg text-stone-300 dark:text-stone-600">
+            <p class="mx-auto mt-4 max-w-xl text-lg text-background/70">
               Open to research collaborations, academic exchanges, and opportunities in data science and decision
               analytics. Send a message directly, or reach out via email and social links below.
             </p>
@@ -534,7 +509,7 @@
           >
             <div class="grid gap-4 sm:grid-cols-2">
               <div>
-                <label for="name" class="text-xs font-medium text-stone-400 dark:text-stone-500">Name</label>
+                <label for="name" class="text-xs font-medium text-background/60">Name</label>
                 <input
                   id="name"
                   name="name"
@@ -543,12 +518,12 @@
                   minlength="2"
                   aria-invalid="false"
                   placeholder="Your name"
-                  class="mt-1.5 w-full rounded-lg border border-stone-700 bg-stone-800/60 px-3.5 py-2.5 text-sm text-stone-100 placeholder-stone-500 outline-none focus:border-accent dark:border-stone-300 dark:bg-white dark:text-stone-900 dark:placeholder-stone-400"
+                  class="mt-1.5 w-full rounded-lg border border-background/20 bg-background/10 px-3.5 py-2.5 text-sm text-background placeholder-background/40 outline-none focus:border-accent"
                 />
-                <p id="name-error" class="mt-1 hidden text-xs text-red-400 dark:text-red-600"></p>
+                <p id="name-error" class="mt-1 hidden text-xs text-red-400"></p>
               </div>
               <div>
-                <label for="email" class="text-xs font-medium text-stone-400 dark:text-stone-500">Email</label>
+                <label for="email" class="text-xs font-medium text-background/60">Email</label>
                 <input
                   id="email"
                   name="email"
@@ -556,14 +531,14 @@
                   required
                   aria-invalid="false"
                   placeholder="you@example.com"
-                  class="mt-1.5 w-full rounded-lg border border-stone-700 bg-stone-800/60 px-3.5 py-2.5 text-sm text-stone-100 placeholder-stone-500 outline-none focus:border-accent dark:border-stone-300 dark:bg-white dark:text-stone-900 dark:placeholder-stone-400"
+                  class="mt-1.5 w-full rounded-lg border border-background/20 bg-background/10 px-3.5 py-2.5 text-sm text-background placeholder-background/40 outline-none focus:border-accent"
                 />
-                <p id="email-error" class="mt-1 hidden text-xs text-red-400 dark:text-red-600"></p>
+                <p id="email-error" class="mt-1 hidden text-xs text-red-400"></p>
               </div>
             </div>
 
             <div>
-              <label for="message" class="text-xs font-medium text-stone-400 dark:text-stone-500">Message</label>
+              <label for="message" class="text-xs font-medium text-background/60">Message</label>
               <textarea
                 id="message"
                 name="message"
@@ -572,9 +547,9 @@
                 minlength="10"
                 aria-invalid="false"
                 placeholder="What would you like to talk about?"
-                class="mt-1.5 w-full resize-none rounded-lg border border-stone-700 bg-stone-800/60 px-3.5 py-2.5 text-sm text-stone-100 placeholder-stone-500 outline-none focus:border-accent dark:border-stone-300 dark:bg-white dark:text-stone-900 dark:placeholder-stone-400"
+                class="mt-1.5 w-full resize-none rounded-lg border border-background/20 bg-background/10 px-3.5 py-2.5 text-sm text-background placeholder-background/40 outline-none focus:border-accent"
               ></textarea>
-              <p id="message-error" class="mt-1 hidden text-xs text-red-400 dark:text-red-600"></p>
+              <p id="message-error" class="mt-1 hidden text-xs text-red-400"></p>
             </div>
 
             <button
@@ -584,7 +559,7 @@
               <i data-lucide="send" class="h-4 w-4"></i>
               Send message
             </button>
-            <p id="contact-status" class="hidden text-center text-xs text-stone-400 dark:text-stone-500">
+            <p id="contact-status" class="hidden text-center text-xs text-background/60">
               Opening your email client with the message pre-filled…
             </p>
           </form>
@@ -592,19 +567,19 @@
           <div class="relative mt-10 flex flex-col items-center gap-6">
             <a
               href="mailto:tt.tian1300@gmail.com"
-              class="inline-flex items-center gap-2 text-sm font-medium text-stone-300 transition-colors hover:text-white dark:text-stone-600 dark:hover:text-stone-900"
+              class="inline-flex items-center gap-2 text-sm font-medium text-background/70 transition-colors hover:text-background"
             >
               <i data-lucide="mail" class="h-4 w-4"></i>
               tt.tian1300@gmail.com
             </a>
             <div class="flex items-center gap-6">
-              <a href="https://github.com/Tian-1300" target="_blank" rel="noreferrer" aria-label="GitHub" class="text-stone-400 transition-colors hover:text-white dark:text-stone-500 dark:hover:text-stone-900">
+              <a href="https://github.com/Tian-1300" target="_blank" rel="noreferrer noopener" aria-label="GitHub" class="text-background/50 transition-colors hover:text-background">
                 <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true" width="20" height="20"><path d="M12 .5C5.65.5.5 5.65.5 12c0 5.09 3.29 9.4 7.86 10.93.57.1.78-.25.78-.55v-2.15c-3.2.7-3.87-1.36-3.87-1.36-.53-1.34-1.29-1.7-1.29-1.7-1.05-.72.08-.7.08-.7 1.17.08 1.78 1.2 1.78 1.2 1.03 1.77 2.72 1.26 3.38.96.1-.75.4-1.26.72-1.55-2.55-.29-5.24-1.28-5.24-5.7 0-1.26.45-2.29 1.19-3.09-.12-.29-.52-1.47.11-3.06 0 0 .97-.31 3.18 1.18a11 11 0 0 1 5.79 0c2.21-1.5 3.18-1.18 3.18-1.18.63 1.6.23 2.77.11 3.06.74.8 1.19 1.83 1.19 3.09 0 4.43-2.7 5.4-5.27 5.69.42.36.77 1.06.77 2.15v3.19c0 .3.21.66.79.55A11.5 11.5 0 0 0 23.5 12C23.5 5.65 18.35.5 12 .5Z"/></svg>
               </a>
-              <a href="https://www.linkedin.com/in/tian-tian-b23680375" target="_blank" rel="noreferrer" aria-label="LinkedIn" class="text-stone-400 transition-colors hover:text-white dark:text-stone-500 dark:hover:text-stone-900">
+              <a href="https://www.linkedin.com/in/tian-tian-b23680375" target="_blank" rel="noreferrer noopener" aria-label="LinkedIn" class="text-background/50 transition-colors hover:text-background">
                 <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true" width="20" height="20"><path d="M20.45 20.45h-3.56v-5.57c0-1.33-.02-3.04-1.85-3.04-1.85 0-2.14 1.45-2.14 2.94v5.67H9.34V9h3.42v1.56h.05c.48-.9 1.63-1.85 3.36-1.85 3.6 0 4.27 2.37 4.27 5.45v6.29ZM5.34 7.43a2.06 2.06 0 1 1 0-4.13 2.06 2.06 0 0 1 0 4.13ZM3.55 20.45h3.57V9H3.55v11.45ZM22.22 0H1.77C.8 0 0 .78 0 1.75v20.5C0 23.22.8 24 1.77 24h20.45c.98 0 1.78-.78 1.78-1.75V1.75C24 .78 23.2 0 22.22 0Z"/></svg>
               </a>
-              <a href="https://orcid.org/0000-0003-1323-4773" target="_blank" rel="noreferrer" aria-label="ORCID" class="text-stone-400 transition-colors hover:text-white dark:text-stone-500 dark:hover:text-stone-900">
+              <a href="https://orcid.org/0000-0003-1323-4773" target="_blank" rel="noreferrer noopener" aria-label="ORCID" class="text-background/50 transition-colors hover:text-background">
                 <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true" width="20" height="20"><path d="M12 0C5.37 0 0 5.37 0 12s5.37 12 12 12 12-5.37 12-12S18.63 0 12 0ZM7.37 5.06a1.32 1.32 0 1 1 0 2.65 1.32 1.32 0 0 1 0-2.65Zm-1.1 3.98h2.19v10.02H6.27V9.04Zm4.16 0h3.86c3.68 0 5.3 2.63 5.3 5.02 0 2.6-2.03 5-5.29 5h-3.87V9.04Zm2.19 1.87v6.28h1.49c2.19 0 3.39-1.57 3.39-3.15 0-1.71-1.05-3.13-3.4-3.13h-1.48Z"/></svg>
               </a>
             </div>
@@ -613,10 +588,10 @@
       </section>
     </main>
 
-    <footer class="border-t border-stone-200 px-6 py-8 dark:border-stone-800">
-      <div class="mx-auto flex max-w-5xl flex-col items-center justify-between gap-2 text-sm text-stone-500 sm:flex-row dark:text-stone-400">
+    <footer class="border-t border-rule px-6 py-8">
+      <div class="mx-auto flex max-w-5xl flex-col items-center justify-between gap-2 text-sm text-ink-soft sm:flex-row">
         <p>&copy; <span id="footer-year"></span> Tian Tian. All rights reserved.</p>
-        <p>Built with HTML, CSS &amp; Tailwind CSS.</p>
+        <p class="font-serif italic">Designed &amp; built by hand.</p>
       </div>
     </footer>
 

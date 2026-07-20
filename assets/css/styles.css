@@ -1,56 +1,58 @@
 :root {
-  /* Matches Tailwind's stone-50 / stone-900 exactly so page background
-     and stone-tinted cards/borders read as one seamless palette. */
-  --background: #fafaf9;
-  --foreground: #1c1917;
+  /* RGB channel triplets (not hex) so Tailwind's opacity modifiers,
+     e.g. text-foreground/70, work correctly via rgb(var(--x) / <alpha-value>). */
+  --background: 253 251 246; /* #fdfbf6 warm paper */
+  --foreground: 27 24 21; /* #1b1815 ink */
+  --ink-soft: 117 107 95; /* #756b5f muted warm gray */
+  --rule: 230 224 211; /* #e6e0d3 hairline */
+  --paper-alt: 245 240 230; /* #f5f0e6 */
 
-  /* Coral — passion, energy */
-  --accent: #e0563b;
-  --accent-soft: #fbe3dc;
+  /* Rust/terracotta — a single confident primary accent */
+  --accent: 179 73 31; /* #b3491f */
+  --accent-soft: 243 221 208; /* #f3ddd0 */
 
-  /* Teal — focus, analytical mind */
-  --accent-2: #0f766e;
-  --accent-2-soft: #dcf1ee;
+  /* Sage — quiet secondary accent, used sparingly */
+  --accent-2: 75 93 69; /* #4b5d45 */
+  --accent-2-soft: 226 232 221; /* #e2e8dd */
 
-  /* Amber — warmth, optimism */
-  --accent-3: #d97706;
-  --accent-3-soft: #fbedd2;
-
-  --glow-1: rgba(224, 86, 59, 0.13);
-  --glow-2: rgba(15, 118, 110, 0.11);
-  --glow-3: rgba(217, 119, 6, 0.12);
+  --glow-1: rgba(179, 73, 31, 0.1);
+  --glow-2: rgba(75, 93, 69, 0.08);
 }
 
 @media (prefers-color-scheme: dark) {
   :root {
-    /* stone-950 / stone-100 */
-    --background: #0c0a09;
-    --foreground: #f5f5f4;
+    --background: 22 19 15; /* #16130f */
+    --foreground: 243 237 226; /* #f3ede2 */
+    --ink-soft: 168 154 137; /* #a89a89 */
+    --rule: 51 44 34; /* #332c22 */
+    --paper-alt: 30 26 20; /* #1e1a14 */
 
-    --accent: #f0806a;
-    --accent-soft: #34211c;
+    --accent: 226 112 63; /* #e2703f */
+    --accent-soft: 58 34 22; /* #3a2216 */
 
-    --accent-2: #4fd1c5;
-    --accent-2-soft: #163330;
+    --accent-2: 139 163 130; /* #8ba382 */
+    --accent-2-soft: 35 39 30; /* #23271e */
 
-    --accent-3: #f5b942;
-    --accent-3-soft: #362a12;
-
-    --glow-1: rgba(240, 128, 106, 0.16);
-    --glow-2: rgba(79, 209, 197, 0.13);
-    --glow-3: rgba(245, 185, 66, 0.14);
+    --glow-1: rgba(226, 112, 63, 0.14);
+    --glow-2: rgba(139, 163, 130, 0.1);
   }
 }
 
 body {
-  background-color: var(--background);
+  background-color: rgb(var(--background));
   background-image:
-    radial-gradient(38rem 30rem at 8% 0%, var(--glow-1), transparent 65%),
-    radial-gradient(34rem 28rem at 100% 22%, var(--glow-2), transparent 65%),
-    radial-gradient(36rem 30rem at 12% 100%, var(--glow-3), transparent 65%);
+    radial-gradient(44rem 36rem at 6% -4%, var(--glow-1), transparent 60%),
+    radial-gradient(38rem 32rem at 100% 30%, var(--glow-2), transparent 60%),
+    repeating-linear-gradient(
+      to bottom,
+      transparent 0,
+      transparent 71px,
+      rgb(var(--rule)) 71px,
+      rgb(var(--rule)) 72px
+    );
   background-attachment: fixed;
-  background-repeat: no-repeat;
-  color: var(--foreground);
+  background-repeat: no-repeat, no-repeat, repeat-y;
+  color: rgb(var(--foreground));
   font-family: "Inter", Arial, Helvetica, sans-serif;
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
@@ -60,6 +62,36 @@ body {
   font-family: "Newsreader", Georgia, serif;
   font-feature-settings: "liga" 1, "kern" 1;
   letter-spacing: -0.01em;
+}
+
+/* Editorial section eyebrow: "01 — Title" */
+.eyebrow {
+  display: flex;
+  align-items: baseline;
+  gap: 0.6rem;
+  font-family: "Newsreader", Georgia, serif;
+  font-style: italic;
+  font-size: 0.95rem;
+  color: rgb(var(--accent));
+  letter-spacing: 0.02em;
+}
+
+.eyebrow-label {
+  font-family: "Inter", Arial, Helvetica, sans-serif;
+  font-style: normal;
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: rgb(var(--ink-soft));
+}
+
+/* Big serif index numerals for list-style sections */
+.index-num {
+  font-family: "Newsreader", Georgia, serif;
+  font-style: italic;
+  color: rgb(var(--accent));
+  font-variant-numeric: oldstyle-nums;
 }
 
 /* Scroll-reveal animation, progressively enhanced with IntersectionObserver */
