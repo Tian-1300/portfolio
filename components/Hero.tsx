@@ -10,8 +10,8 @@ import { site } from "@/data/site";
 export default function Hero() {
   return (
     <section
-      id="top"
-      className="flex min-h-screen flex-col justify-center px-6 pt-28 pb-16"
+      id="hero-section"
+      className="hero-section flex min-h-screen flex-col justify-center px-6 pt-28 pb-16"
     >
       <div className="mx-auto grid w-full max-w-5xl gap-14 lg:grid-cols-[1.15fr_0.85fr] lg:items-center lg:gap-10">
         <div>
@@ -33,7 +33,7 @@ export default function Hero() {
 
           <div className="mt-10 flex flex-wrap items-center gap-4">
             <a
-              href="#publications"
+              href="#projects-section"
               className="group inline-flex items-center gap-2 rounded-full bg-accent px-5 py-3 text-sm font-medium text-white shadow-lg shadow-accent/20 transition-transform hover:-translate-y-0.5"
             >
               View my research
@@ -43,7 +43,7 @@ export default function Hero() {
               />
             </a>
             <a
-              href="#contact"
+              href="#contact-section"
               className="inline-flex items-center gap-2 rounded-full border border-stone-300 px-5 py-3 text-sm font-medium text-stone-800 transition-colors hover:bg-stone-100 dark:border-stone-700 dark:text-stone-200 dark:hover:bg-stone-900"
             >
               Get in touch

@@ -1,4 +1,5 @@
 import SectionHeading from "@/components/SectionHeading";
+import Reveal from "@/components/Reveal";
 import { skills } from "@/data/skills";
 
 const tones = [
@@ -43,27 +44,32 @@ export default function Skills() {
   return (
     <section id="skills" className="border-t border-stone-200 px-6 py-24 dark:border-stone-800">
       <div className="mx-auto max-w-4xl text-center">
-        <div className="flex justify-center">
+        <Reveal className="flex justify-center">
           <SectionHeading color="accent2">Skills</SectionHeading>
-        </div>
+        </Reveal>
 
-        <div className="mt-12 flex flex-wrap items-center justify-center gap-x-2.5 gap-y-1.5">
-          {words.map((word) => (
-            <span
-              key={word.text}
-              style={{
-                transform: `rotate(${word.rotate}deg) translateY(${word.shift}px)`,
-              }}
-              className="inline-block"
-            >
+        <Reveal
+          delay={100}
+          className="mt-12 flex flex-wrap items-center justify-center gap-x-2.5 gap-y-1.5"
+        >
+          <>
+            {words.map((word) => (
               <span
-                className={`inline-block cursor-default rounded-md px-1.5 py-0.5 leading-none transition-transform duration-200 hover:-translate-y-0.5 hover:scale-110 ${word.size} ${word.tone}`}
+                key={word.text}
+                style={{
+                  transform: `rotate(${word.rotate}deg) translateY(${word.shift}px)`,
+                }}
+                className="inline-block"
               >
-                {word.text}
+                <span
+                  className={`inline-block cursor-default rounded-md px-1.5 py-0.5 leading-none transition-transform duration-200 hover:-translate-y-0.5 hover:scale-110 ${word.size} ${word.tone}`}
+                >
+                  {word.text}
+                </span>
               </span>
-            </span>
-          ))}
-        </div>
+            ))}
+          </>
+        </Reveal>
       </div>
     </section>
   );

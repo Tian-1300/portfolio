@@ -1,4 +1,4 @@
-import type { Metadata } from "next";
+import type { Metadata, Viewport } from "next";
 import { Geist, Geist_Mono, Newsreader } from "next/font/google";
 import "./globals.css";
 
@@ -23,6 +23,11 @@ export const metadata: Metadata = {
   title: "Tian Tian — PhD Candidate in Applied Mathematics (Operations Research)",
   description:
     "Portfolio of Tian Tian — research on AI-driven optimization, predictive analytics, and revenue management.",
+};
+
+export const viewport: Viewport = {
+  width: "device-width",
+  initialScale: 1,
 };
 
 export default function RootLayout({

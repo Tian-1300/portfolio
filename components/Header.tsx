@@ -5,12 +5,12 @@ import { Menu, X } from "lucide-react";
 import { site } from "@/data/site";
 
 const links = [
-  { href: "#about", label: "About" },
+  { href: "#about-section", label: "About" },
   { href: "#experience", label: "Experience" },
   { href: "#education", label: "Education" },
-  { href: "#publications", label: "Publications" },
+  { href: "#projects-section", label: "Projects" },
   { href: "#skills", label: "Skills" },
-  { href: "#contact", label: "Contact" },
+  { href: "#contact-section", label: "Contact" },
 ];
 
 export default function Header() {
@@ -20,7 +20,7 @@ export default function Header() {
     <header className="fixed top-0 z-50 w-full border-b border-black/5 bg-background/80 backdrop-blur-md dark:border-white/10">
       <div className="mx-auto flex max-w-5xl items-center justify-between px-6 py-4">
         <a
-          href="#top"
+          href="#hero-section"
           className="font-serif text-base font-medium tracking-tight text-stone-900 dark:text-stone-100"
         >
           {site.name}
