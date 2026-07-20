@@ -10,6 +10,7 @@ export const site = {
   social: {
     github: "https://github.com/Tian-1300",
     orcid: "https://orcid.org/0000-0003-1323-4773",
+    linkedin: "https://www.linkedin.com/in/tian-tian-b23680375",
   },
   resumeUrl: "/Tian-Tian-CV.pdf",
 };

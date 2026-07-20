@@ -1,5 +1,9 @@
 import { ArrowRight, Mail } from "lucide-react";
-import { GithubIcon, OrcidIcon } from "@/components/icons/BrandIcons";
+import {
+  GithubIcon,
+  LinkedinIcon,
+  OrcidIcon,
+} from "@/components/icons/BrandIcons";
 import { site } from "@/data/site";
 
 export default function Hero() {
@@ -50,6 +54,15 @@ export default function Hero() {
             className="text-neutral-500 transition-colors hover:text-neutral-900 dark:hover:text-neutral-100"
           >
             <GithubIcon width={20} height={20} />
+          </a>
+          <a
+            href={site.social.linkedin}
+            target="_blank"
+            rel="noreferrer"
+            aria-label="LinkedIn"
+            className="text-neutral-500 transition-colors hover:text-neutral-900 dark:hover:text-neutral-100"
+          >
+            <LinkedinIcon width={20} height={20} />
           </a>
           <a
             href={site.social.orcid}

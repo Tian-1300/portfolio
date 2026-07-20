@@ -1,3 +1,4 @@
+import Image from "next/image";
 import { site } from "@/data/site";
 
 export default function About() {
@@ -8,7 +9,14 @@ export default function About() {
           About
         </h2>
         <div className="mt-6 grid gap-10 sm:grid-cols-[auto_1fr] sm:items-start">
-          <div className="h-28 w-28 flex-shrink-0 rounded-2xl bg-gradient-to-br from-neutral-200 to-neutral-100 dark:from-neutral-800 dark:to-neutral-900" />
+          <Image
+            src="/avatar.png"
+            alt={site.name}
+            width={112}
+            height={112}
+            className="h-28 w-28 flex-shrink-0 rounded-2xl object-cover"
+            priority
+          />
           <div>
             <p className="max-w-2xl text-lg leading-relaxed text-neutral-700 dark:text-neutral-300">
               {site.bio}
