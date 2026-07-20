@@ -17,6 +17,10 @@
   /* Amber — warmth, optimism */
   --accent-3: #d97706;
   --accent-3-soft: #fbedd2;
+
+  --glow-1: rgba(224, 86, 59, 0.13);
+  --glow-2: rgba(15, 118, 110, 0.11);
+  --glow-3: rgba(217, 119, 6, 0.12);
 }
 
 @theme inline {
@@ -47,6 +51,10 @@
 
     --accent-3: #f5b942;
     --accent-3-soft: #362a12;
+
+    --glow-1: rgba(240, 128, 106, 0.16);
+    --glow-2: rgba(79, 209, 197, 0.13);
+    --glow-3: rgba(245, 185, 66, 0.14);
   }
 }
 
@@ -55,7 +63,13 @@ html {
 }
 
 body {
-  background: var(--background);
+  background-color: var(--background);
+  background-image:
+    radial-gradient(38rem 30rem at 8% 0%, var(--glow-1), transparent 65%),
+    radial-gradient(34rem 28rem at 100% 22%, var(--glow-2), transparent 65%),
+    radial-gradient(36rem 30rem at 12% 100%, var(--glow-3), transparent 65%);
+  background-attachment: fixed;
+  background-repeat: no-repeat;
   color: var(--foreground);
   font-family: var(--font-sans), Arial, Helvetica, sans-serif;
   text-rendering: optimizeLegibility;
