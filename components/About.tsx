@@ -14,8 +14,16 @@ export default function About() {
               {site.bio}
             </p>
             <p className="mt-4 text-sm text-neutral-500 dark:text-neutral-400">
-              Based in {site.location}
+              {site.location}
             </p>
+            <a
+              href={site.resumeUrl}
+              target="_blank"
+              rel="noreferrer"
+              className="mt-6 inline-flex items-center gap-2 rounded-full border border-neutral-300 px-5 py-2.5 text-sm font-medium text-neutral-800 transition-colors hover:bg-neutral-100 dark:border-neutral-700 dark:text-neutral-200 dark:hover:bg-neutral-900"
+            >
+              Download CV
+            </a>
           </div>
         </div>
       </div>

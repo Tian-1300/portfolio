@@ -38,3 +38,16 @@ export function TwitterIcon(props: SVGProps<SVGSVGElement>) {
     </svg>
   );
 }
+
+export function OrcidIcon(props: SVGProps<SVGSVGElement>) {
+  return (
+    <svg
+      viewBox="0 0 24 24"
+      fill="currentColor"
+      aria-hidden="true"
+      {...props}
+    >
+      <path d="M12 0C5.37 0 0 5.37 0 12s5.37 12 12 12 12-5.37 12-12S18.63 0 12 0ZM7.37 5.06a1.32 1.32 0 1 1 0 2.65 1.32 1.32 0 0 1 0-2.65Zm-1.1 3.98h2.19v10.02H6.27V9.04Zm4.16 0h3.86c3.68 0 5.3 2.63 5.3 5.02 0 2.6-2.03 5-5.29 5h-3.87V9.04Zm2.19 1.87v6.28h1.49c2.19 0 3.39-1.57 3.39-3.15 0-1.71-1.05-3.13-3.4-3.13h-1.48Z" />
+    </svg>
+  );
+}

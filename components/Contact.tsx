@@ -1,9 +1,5 @@
 import { Mail } from "lucide-react";
-import {
-  GithubIcon,
-  LinkedinIcon,
-  TwitterIcon,
-} from "@/components/icons/BrandIcons";
+import { GithubIcon, OrcidIcon } from "@/components/icons/BrandIcons";
 import { site } from "@/data/site";
 
 export default function Contact() {
@@ -15,11 +11,12 @@ export default function Contact() {
         </h2>
 
         <h3 className="mt-6 text-3xl font-semibold tracking-tight text-neutral-900 sm:text-4xl dark:text-neutral-50">
-          Let&apos;s work together.
+          Let&apos;s connect.
         </h3>
         <p className="mt-4 max-w-xl text-lg text-neutral-600 dark:text-neutral-400">
-          I&apos;m always open to discussing new projects, creative ideas, or
-          opportunities to be part of your vision. Feel free to reach out.
+          Open to research collaborations, academic exchanges, and
+          opportunities in data science and decision analytics. Feel free to
+          reach out.
         </p>
 
         <a
@@ -41,22 +38,13 @@ export default function Contact() {
             <GithubIcon width={20} height={20} />
           </a>
           <a
-            href={site.social.linkedin}
+            href={site.social.orcid}
             target="_blank"
             rel="noreferrer"
-            aria-label="LinkedIn"
+            aria-label="ORCID"
             className="text-neutral-500 transition-colors hover:text-neutral-900 dark:hover:text-neutral-100"
           >
-            <LinkedinIcon width={20} height={20} />
-          </a>
-          <a
-            href={site.social.twitter}
-            target="_blank"
-            rel="noreferrer"
-            aria-label="Twitter"
-            className="text-neutral-500 transition-colors hover:text-neutral-900 dark:hover:text-neutral-100"
-          >
-            <TwitterIcon width={20} height={20} />
+            <OrcidIcon width={20} height={20} />
           </a>
         </div>
       </div>

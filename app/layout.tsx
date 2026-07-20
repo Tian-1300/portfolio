@@ -13,8 +13,9 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Tian Tian — Software Engineer",
-  description: "Portfolio of Tian Tian, software engineer.",
+  title: "Tian Tian — PhD Candidate in Applied Mathematics (Operations Research)",
+  description:
+    "Portfolio of Tian Tian — research on AI-driven optimization, predictive analytics, and revenue management.",
 };
 
 export default function RootLayout({

@@ -1,5 +1,5 @@
 import { ArrowRight, Mail } from "lucide-react";
-import { GithubIcon, LinkedinIcon } from "@/components/icons/BrandIcons";
+import { GithubIcon, OrcidIcon } from "@/components/icons/BrandIcons";
 import { site } from "@/data/site";
 
 export default function Hero() {
@@ -18,13 +18,16 @@ export default function Hero() {
         <p className="mt-6 max-w-xl text-lg text-neutral-600 dark:text-neutral-400">
           {site.tagline}
         </p>
+        <p className="mt-3 max-w-xl text-sm text-neutral-500 italic dark:text-neutral-500">
+          &ldquo;{site.quote}&rdquo;
+        </p>
 
         <div className="mt-10 flex flex-wrap items-center gap-4">
           <a
-            href="#projects"
+            href="#publications"
             className="group inline-flex items-center gap-2 rounded-full bg-neutral-900 px-5 py-3 text-sm font-medium text-white transition-transform hover:-translate-y-0.5 dark:bg-white dark:text-neutral-900"
           >
-            View my work
+            View my research
             <ArrowRight
               size={16}
               className="transition-transform group-hover:translate-x-0.5"
@@ -49,13 +52,13 @@ export default function Hero() {
             <GithubIcon width={20} height={20} />
           </a>
           <a
-            href={site.social.linkedin}
+            href={site.social.orcid}
             target="_blank"
             rel="noreferrer"
-            aria-label="LinkedIn"
+            aria-label="ORCID"
             className="text-neutral-500 transition-colors hover:text-neutral-900 dark:hover:text-neutral-100"
           >
-            <LinkedinIcon width={20} height={20} />
+            <OrcidIcon width={20} height={20} />
           </a>
           <a
             href={`mailto:${site.email}`}
