@@ -21,7 +21,7 @@ export default function Header() {
       <div className="mx-auto flex max-w-5xl items-center justify-between px-6 py-4">
         <a
           href="#top"
-          className="font-serif text-base tracking-tight text-stone-900 dark:text-stone-100"
+          className="font-serif text-base font-medium tracking-tight text-stone-900 dark:text-stone-100"
         >
           {site.name}
         </a>

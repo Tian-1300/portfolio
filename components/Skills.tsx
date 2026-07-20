@@ -18,7 +18,7 @@ export default function Skills() {
             const tone = palette[i % palette.length];
             return (
               <div key={group.category}>
-                <h3 className="flex items-center gap-2 font-serif text-base text-stone-900 dark:text-stone-100">
+                <h3 className="flex items-center gap-2 font-serif text-base font-medium text-stone-900 dark:text-stone-100">
                   <span className={`h-2 w-2 rounded-full ${tone.dot}`} />
                   {group.category}
                 </h3>

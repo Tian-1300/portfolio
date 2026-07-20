@@ -22,7 +22,7 @@ export default function Contact() {
           <span className="h-px w-8 bg-accent-3" />
         </h2>
 
-        <h3 className="mt-6 font-serif text-3xl text-stone-50 sm:text-4xl dark:text-stone-900">
+        <h3 className="mt-6 font-serif text-3xl font-medium text-stone-50 sm:text-4xl dark:text-stone-900">
           Let&apos;s connect.
         </h3>
         <p className="mx-auto mt-4 max-w-xl text-lg text-stone-300 dark:text-stone-600">

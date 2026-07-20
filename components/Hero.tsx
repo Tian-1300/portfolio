@@ -18,7 +18,7 @@ export default function Hero() {
           <p className="mb-5 text-sm font-medium tracking-wide text-accent">
             Hi, I&apos;m {site.name.split(" ")[0]}
           </p>
-          <h1 className="font-serif text-5xl leading-[1.05] tracking-tight text-stone-900 sm:text-6xl dark:text-stone-50">
+          <h1 className="font-serif text-6xl leading-[1.05] font-medium text-stone-900 sm:text-7xl dark:text-stone-50">
             {site.name}
           </h1>
           <p className="mt-5 inline-block rounded-full border border-accent/30 bg-accent-soft px-4 py-1.5 text-sm font-medium text-accent">
@@ -27,7 +27,7 @@ export default function Hero() {
           <p className="mt-6 max-w-xl text-lg leading-relaxed text-stone-600 dark:text-stone-400">
             {site.tagline}
           </p>
-          <p className="mt-4 max-w-md border-l-2 border-accent/40 pl-4 text-sm text-stone-500 italic dark:text-stone-400">
+          <p className="mt-4 max-w-md border-l-2 border-accent/40 pl-4 font-serif text-lg text-stone-500 italic dark:text-stone-400">
             &ldquo;{site.quote}&rdquo;
           </p>
 

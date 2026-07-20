@@ -24,7 +24,7 @@ export default function Publications() {
                 className="group flex flex-col gap-2 rounded-2xl border border-stone-200 p-6 transition-all hover:-translate-y-0.5 hover:border-accent/40 hover:shadow-lg hover:shadow-stone-900/5 dark:border-stone-800 dark:hover:border-accent/40"
               >
                 <div className="flex items-start justify-between gap-4">
-                  <h3 className="flex items-start gap-3 font-serif text-lg text-stone-900 dark:text-stone-50">
+                  <h3 className="flex items-start gap-3 font-serif text-lg font-medium text-stone-900 dark:text-stone-50">
                     <span
                       className={`mt-2.5 h-1.5 w-1.5 flex-shrink-0 rounded-full ${dot}`}
                     />

@@ -16,7 +16,7 @@ export default function Education() {
               <p className="text-xs font-medium tracking-wide text-accent-2 uppercase">
                 {item.period}
               </p>
-              <h3 className="mt-2 font-serif text-lg text-stone-900 dark:text-stone-50">
+              <h3 className="mt-2 font-serif text-lg font-medium text-stone-900 dark:text-stone-50">
                 {item.degree}
               </h3>
               <p className="mt-1 text-sm text-stone-600 dark:text-stone-400">

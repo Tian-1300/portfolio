@@ -14,7 +14,7 @@ export default function Experience() {
               <p className="text-xs font-medium tracking-wide text-accent-3 uppercase">
                 {item.period}
               </p>
-              <h3 className="mt-1.5 font-serif text-xl text-stone-900 dark:text-stone-50">
+              <h3 className="mt-1.5 font-serif text-xl font-medium text-stone-900 dark:text-stone-50">
                 {item.role}
               </h3>
               <p className="text-sm text-stone-600 dark:text-stone-400">
