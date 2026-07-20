@@ -9,11 +9,17 @@ import { site } from "@/data/site";
 export default function Contact() {
   return (
     <section id="contact" className="border-t border-stone-200 px-6 py-24 dark:border-stone-800">
-      <div className="mx-auto max-w-5xl rounded-3xl bg-stone-900 px-8 py-14 text-center dark:bg-stone-50 sm:px-16">
-        <h2 className="flex items-center justify-center gap-3 text-sm font-semibold tracking-widest text-stone-400 uppercase dark:text-stone-500">
+      <div className="relative mx-auto max-w-5xl overflow-hidden rounded-3xl bg-stone-900 px-8 py-14 text-center dark:bg-stone-50 sm:px-16">
+        <div className="pointer-events-none absolute inset-0 -z-10">
+          <div className="absolute -top-24 -left-16 h-64 w-64 rounded-full bg-accent/30 blur-3xl" />
+          <div className="absolute top-1/2 -right-16 h-56 w-56 rounded-full bg-accent-2/25 blur-3xl" />
+          <div className="absolute -bottom-20 left-1/3 h-56 w-56 rounded-full bg-accent-3/25 blur-3xl" />
+        </div>
+
+        <h2 className="relative flex items-center justify-center gap-3 text-sm font-semibold tracking-widest text-stone-400 uppercase dark:text-stone-500">
           <span className="h-px w-8 bg-accent" />
           Contact
-          <span className="h-px w-8 bg-accent" />
+          <span className="h-px w-8 bg-accent-3" />
         </h2>
 
         <h3 className="mt-6 font-serif text-3xl text-stone-50 sm:text-4xl dark:text-stone-900">

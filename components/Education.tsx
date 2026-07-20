@@ -5,15 +5,15 @@ export default function Education() {
   return (
     <section id="education" className="border-t border-stone-200 px-6 py-24 dark:border-stone-800">
       <div className="mx-auto max-w-5xl">
-        <SectionHeading>Education</SectionHeading>
+        <SectionHeading color="accent2">Education</SectionHeading>
 
         <div className="mt-10 grid gap-6 sm:grid-cols-2">
           {education.map((item) => (
             <div
               key={`${item.period}-${item.degree}`}
-              className="rounded-2xl border border-stone-200 bg-stone-50/60 p-6 transition-shadow hover:shadow-md dark:border-stone-800 dark:bg-stone-900/30"
+              className="rounded-2xl border border-stone-200 border-t-2 border-t-accent-2/50 bg-stone-50/60 p-6 transition-shadow hover:shadow-md dark:border-stone-800 dark:border-t-accent-2/50 dark:bg-stone-900/30"
             >
-              <p className="text-xs font-medium tracking-wide text-accent uppercase">
+              <p className="text-xs font-medium tracking-wide text-accent-2 uppercase">
                 {item.period}
               </p>
               <h3 className="mt-2 font-serif text-lg text-stone-900 dark:text-stone-50">

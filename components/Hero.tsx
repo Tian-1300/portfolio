@@ -89,7 +89,7 @@ export default function Hero() {
         </div>
 
         <div className="relative mx-auto w-full max-w-sm lg:mx-0">
-          <div className="absolute -top-6 -right-6 -bottom-6 -left-6 -z-10 rounded-[2.5rem] bg-gradient-to-br from-accent-soft via-accent-soft to-transparent blur-2xl" />
+          <div className="absolute -top-8 -right-8 -bottom-8 -left-8 -z-10 rounded-[2.5rem] bg-gradient-to-br from-accent-soft via-accent-3-soft to-accent-2-soft blur-2xl" />
           <div className="relative aspect-[4/5] overflow-hidden rounded-[2rem] border border-stone-200 shadow-2xl shadow-stone-900/10 dark:border-stone-800">
             <Image
               src="/avatar.png"
